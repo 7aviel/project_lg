@@ -1,0 +1,77 @@
+/*======== IMPORTS ========*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+/*======= RESET ========*/
+
+html{
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+/*======== GLOBAL VARIABLES ========*/
+:root {
+  
+  /*positioning*/
+  --globalSpacing: 1.5rem;
+
+  /*typography*/
+  --fontSize: 100%;
+  --lineHeight: 1.6;
+
+  /*Colors*/
+  --darkGrey: #222;
+  --color-primary: #9893DA; 
+  --color-secondary: #797A9E;
+  --color-tertiary: #BBBDF6;
+  --lightGrey: #f5f5f5;
+  
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  line-height: var(--lineHeight);
+  font-weight: 500;
+  font-size: var(--fontSize);
+  background-color: var(--lightGrey);
+  padding: 0 var(--globalSpacing) 0 var(--globalSpacing);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  --lineHeight: 2.0;
+  line-height: var(--lineHeight);
+}
+
+h1{
+  font-size: 3.052rem;
+}
+h2{
+  font-size: 2.588rem;
+}
+h3{
+  font-size: 2.074rem;
+}
+h4{
+  font-size: 1.728rem;
+}
+h5{
+  font-size: 1.44rem;
+}
+h6{
+  font-size: 1.2rem;
+}
+
+p{
+  margin-bottom: 1.2rem;
+}
