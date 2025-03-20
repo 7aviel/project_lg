@@ -1,18 +1,11 @@
+import Main from "./components/Main";
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <>
-      <header>
-        <div>
-          <h2>FAKE LOGO</h2>
-        </div>
-        <div>
-          Choose a new theme:
-          <button id="theme1">1</button>
-          <button id="theme2">2</button>
-          <button id="theme3">3</button>
-        </div>
-      </header>
-
+      <Navbar />
+      <Main />
       <main>
         <h1>STRIPEY.CSS</h1>
         <p>Steal the meta for this.</p>
@@ -56,6 +49,78 @@ function App() {
         <h3>Inline Styles (h3) </h3>
         <p>
           <a href="#!">This is a text link - hover for different states</a>.
+        </p>
+      </div>
+      <h2>INPUTS </h2>
+      <div>
+        <h3> p tag version </h3>
+        <p>
+          <label>Text Input</label>
+          <input id="input_p__text" placeholder="Text Input" type="text" />
+        </p>
+
+        <p>
+          <label>Password</label>
+          <input
+            id="input_p__password"
+            placeholder="Type your Password"
+            type="password"
+          />
+        </p>
+
+        <p>
+          <label>URL Address</label>
+          <input
+            id="input_p__webaddress"
+            placeholder="http://yoursite.com"
+            type="url"
+          />
+        </p>
+
+        <p>
+          <label>Email Address</label>
+          <input
+            id="input_p__emailaddress"
+            placeholder="name@email.com"
+            type="email"
+          />
+        </p>
+
+        <p>
+          <label>Phone Number</label>
+          <input id="input_p__phone" placeholder="(999) 999-9999" type="tel" />
+        </p>
+
+        <p>
+          <label>Search</label>
+          <input
+            id="input_p__search"
+            placeholder="Enter Search Term"
+            type="search"
+          />
+        </p>
+
+        <p>
+          <label>Number Input</label>
+          <input
+            id="input_p__text2"
+            placeholder="Enter a Number"
+            type="number"
+          />
+        </p>
+
+        <p>
+          <label>Error</label>
+          <input id="input_p__text3" placeholder="Text Input" type="text" />
+        </p>
+
+        <p>
+          <label>Valid</label>
+          <input id="input_p__text4" placeholder="Text Input" type="text" />
+        </p>
+        <p>
+          <label>Textarea</label>
+          <textarea placeholder="Enter your message here"></textarea>
         </p>
       </div>
     </>

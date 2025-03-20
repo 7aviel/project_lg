@@ -18,29 +18,54 @@ html{
 /*======== GLOBAL VARIABLES ========*/
 :root {
   
+  /*Img*/
+  --bgImage: url('../images/bg_1.jpg');
+
   /*positioning*/
   --globalSpacing: 1.5rem;
+  --smallSpacing: 0.8rem;
+  --btnRadius: 1.2rem;
 
   /*typography*/
   --fontSize: 100%;
   --lineHeight: 1.6;
+  --smallText: 0.8em;
+  --fontFamily: 'Inter', sans-serif;
+  --h1: 3.052rem; 
+  --h2: 2.588rem;
+  --h3: 2.074rem;
+  --h4: 1.728rem;
+  --h5: 1.44rem;
+  --h6: 1.2rem;
 
   /*Colors*/
   --darkGrey: #222;
-  --color-primary: #9893DA; 
-  --color-secondary: #797A9E;
+  --colorCharcoal: #465362; 
+  --colorOxfordBlue: #011936;
   --color-tertiary: #BBBDF6;
   --lightGrey: #f5f5f5;
-  
+
+  /* Elevation */
+  --level-1: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --level-2: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --level-3: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-4: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-5: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-6: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --level-7: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 body{
-  font-family: 'Inter', sans-serif;
+  font-family: var(--fontFamily) ;
   line-height: var(--lineHeight);
   font-weight: 500;
   font-size: var(--fontSize);
   background-color: var(--lightGrey);
-  padding: 0 var(--globalSpacing) 0 var(--globalSpacing);
+  padding: var(--smallSpacing) var(--globalSpacing) 0 var(--globalSpacing);
+  color: #f5f5f5;
 }
 
 h1,
@@ -54,24 +79,115 @@ h6{
 }
 
 h1{
-  font-size: 3.052rem;
+  font-size: var(--h1);
 }
 h2{
-  font-size: 2.588rem;
+  font-size: var(--h2);
 }
 h3{
-  font-size: 2.074rem;
+  font-size: var(--h3);
 }
 h4{
-  font-size: 1.728rem;
+  font-size: var(--h4);
 }
 h5{
-  font-size: 1.44rem;
+  font-size: var(--h5);
 }
 h6{
-  font-size: 1.2rem;
+  font-size: var(--h6);
 }
 
 p{
   margin-bottom: 1.2rem;
+}
+
+/*======= BUTTONS ========*/
+button{
+  background-color: var(--colorOxfordBlue);
+  color: white;
+  font-family: var(--fontFamily);
+  border-radius: var(--btnRadius);
+  border: none;
+  padding: 5px 25px;
+  box-shadow: var(--level-5);
+  transition: 0.3s ease-in-out;
+  appearance: none;
+}
+
+button:hover{
+  background-color: var(--colorCharcoal);
+}
+/*======== FORMS ========*/
+label{
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+input,
+textarea{
+  font-size: var(--smallText);
+  font-family: var(--fontFamily);
+  border-radius: 3px;
+  border: var(--lightGrey), solid, 1px;
+  padding: 5px 10px;
+  box-shadow: var(--level-4);
+}
+textarea{
+  width: 100%;
+  height: 5rem;
+}
+
+/*======== LINKS ========*/
+a{
+  text-decoration: none;
+  color: var(--darkGrey);
+  border-bottom: solid 0.2rem var(--colorOxfordBlue);
+  color: #f5f5f5;
+}
+a:hover{
+  border-bottom: solid 0.2rem var(--colorCharcoal);
+  transition: 0.3s ease-in-out;
+}
+
+/*======== NAV ========*/
+
+header{
+  background-color: transparent;
+}
+
+nav > a + a{
+  margin-left: 1.5rem;
+}
+nav > a + button{
+  margin-left: 1.5rem;
+}
+
+nav > button{
+  padding: 10px 25px;
+  font-size: 1rem;
+}
+
+/*======== HOME ========*/
+.home{
+  background-image: var(--bgImage);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position-y: top;
+  height: 5vh;
+}
+
+/*======== LAYOUT ========*/
+
+.flex{
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*======== MEDIA QUERIES ========*/
+@media only screen and (min-width: 500px)  {
+  .flex{
+    display: flex;
+  }
 }
