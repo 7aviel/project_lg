@@ -7,8 +7,10 @@ function App() {
       <Navbar />
       <Main />
       <main>
-        <h1>STRIPEY.CSS</h1>
-        <p>Steal the meta for this.</p>
+        <section className="section2">
+          <h1>STRIPEY.CSS</h1>
+          <p>Steal the meta for this.</p>
+        </section>
       </main>
       <section>
         <h2>Text Content</h2>
