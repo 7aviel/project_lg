@@ -64,8 +64,7 @@ body{
   font-weight: 500;
   font-size: var(--fontSize);
   background-color: var(--lightGrey);
-  padding: var(--smallSpacing) var(--globalSpacing) 0 var(--globalSpacing);
-  color: #f5f5f5;
+  color: var(--lightGrey);
 }
 
 h1,
@@ -154,6 +153,8 @@ a:hover{
 
 header{
   background-color: transparent;
+  padding: var(--smallSpacing) var(--globalSpacing) 0 var(--globalSpacing);
+  max-width: 100%;
 }
 
 nav > a + a{
@@ -207,7 +208,7 @@ nav > button{
 /*======== CUSTOM STYLING ========*/
 .section1{
   height: 80vh;
-  padding: 0 5%;
+  padding: 0 6.7%;
 }
 .section1> div > h1{
   --lineHeight: 1.0;
