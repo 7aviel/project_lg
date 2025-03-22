@@ -181,7 +181,7 @@ nav > button{
 /*======== LAYOUT ========*/
 
 .flex{
-  display: block;
+  display: flex;
 }
 
 .space-between{
@@ -198,11 +198,11 @@ nav > button{
 }
 
 /*======== MEDIA QUERIES ========*/
-@media only screen and (min-width: 500px)  {
+/*@media only screen and (min-width: 500px)  {
   .flex{
     display: flex;
   }
-}
+}*/
 
 /*======== CUSTOM STYLING ========*/
 .section1{
