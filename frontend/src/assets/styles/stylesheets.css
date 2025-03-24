@@ -42,8 +42,7 @@ html{
   --darkGrey: #222;
   --colorCharcoal: #465362; 
   --colorOxfordBlue: #011936;
-  --color-tertiary: #BBBDF6;
-  --lightGrey: #f5f5f5;
+  --lightGrey: #E7ECEF;
 
   /* Elevation */
   --level-1: 0 0 0 1px rgba(0, 0, 0, 0.05);
@@ -103,7 +102,7 @@ p{
 /*======= BUTTONS ========*/
 button{
   background-color: var(--colorOxfordBlue);
-  color: white;
+  color: var(--lightGrey);
   font-family: var(--fontFamily);
   border-radius: var(--btnRadius);
   border: none;
@@ -151,24 +150,77 @@ a:hover{
 
 /*======== NAV ========*/
 
-header{
+header {
   background-color: transparent;
-  padding: var(--smallSpacing) var(--globalSpacing) 0 var(--globalSpacing);
-  max-width: 100%;
+  padding: var(--smallSpacing) var(--globalSpacing);
+  position: relative;
+  z-index: 100;
 }
 
-nav > a + a{
-  margin-left: 1.5rem;
-}
-nav > a + button{
-  margin-left: 1.5rem;
+.navbar{
+  display: none;
 }
 
-nav > button{
-  padding: 10px 25px;
-  font-size: 1rem;
+
+.mobile-bar {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
 }
 
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lightGrey);
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 101;
+  padding-top: 2rem;
+}
+
+.nav-menu.open {
+  transform: translateX(0);
+}
+
+.nav-menu > a {
+  padding: var(--smallSpacing);
+  text-align: center;
+  color: var(--darkGrey);
+}
+
+.nav-menu > a + a {
+  margin-top: var(--smallSpacing);
+}
+
+.nav-menu > a + button {
+  margin-top: var(--globalSpacing);
+}
+
+/*====== BACKDROP ======*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
+}
+
+.backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
 /*======== HOME ========*/
 .home{
   background-image: linear-gradient(#01193685 ,#4653627a), var(--bgImage);
@@ -199,9 +251,46 @@ nav > button{
 }
 
 /*======== MEDIA QUERIES ========*/
-/*@media only screen and (min-width: 500px)  {
-  .flex{
-    display: flex;
+@media only screen and (min-width: 720px)  {
+
+  .mobile-bar {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .backdrop {
+    display: none;
+  }
+
+  .navbar{
+    display: block;
+  }
+
+  .navbar > a + a{
+    margin-left: 1.5rem;
+  }
+  
+  .navbar > a + button{
+    margin-left: 1.5rem;
+  }
+
+}
+/* Responsive Styles */
+/*
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .nav-menu {
+    display: block;
   }
 }*/
 
