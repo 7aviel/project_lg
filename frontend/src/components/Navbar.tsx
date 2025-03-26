@@ -15,8 +15,24 @@ export default function Navbar() {
     }
   };
 
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeColor);
+
   return (
-    <header className="flex space-between center-items">
+    <header
+      className={`flex space-between center-items ${
+        color ? "header-bg-light" : ""
+      }`}
+    >
       <h4>LOGO AQUI</h4>
       <button
         title="btn"
