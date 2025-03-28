@@ -25,6 +25,7 @@ html{
   --globalSpacing: 1.5rem;
   --smallSpacing: 0.8rem;
   --btnRadius: 1.2rem;
+  --cardWidth: 400px;
 
   /*typography*/
   --fontSize: 100%;
@@ -124,7 +125,7 @@ label{
 
 input,
 textarea{
-  font-size: var(--smallText);
+  font-size: var(--fontSize);
   font-family: var(--fontFamily);
   border-radius: 3px;
   border: var(--lightGrey), solid, 1px;
@@ -140,12 +141,16 @@ textarea{
 a{
   text-decoration: none;
   color: var(--darkGrey);
-  border-bottom: solid 0.2rem var(--colorOxfordBlue);
   color: #f5f5f5;
+ transition: 0.2s ease-in-out;
 }
 a:hover{
-  border-bottom: solid 0.2rem var(--colorCharcoal);
-  transition: 0.3s ease-in-out;
+  border-bottom: 0.2rem solid var(--colorOxfordBlue);
+  
+}
+
+a:active{
+  border-bottom: 0.2rem solid var(--colorCharcoal);
 }
 
 /*======== NAV ========*/
@@ -255,8 +260,47 @@ header {
   justify-content: space-around;
 }
 
+.content-center{
+  justify-content: center;
+}
+
 .center-items{
   align-items: center;
+}
+
+/*======== CARDS ========*/
+.card{
+  max-width: var(--cardWidth);
+  border-radius: var(--btnRadius);
+  box-shadow: var(--level-5);
+  background-color: var(--lightGrey);
+  color: var(--darkGrey);
+  text-align: justify;
+  padding: 5% ;
+  margin: 0 5% 0 5%;
+}
+
+.section-card{
+  display: flex;
+  justify-content: center;
+  margin: 10% 0 10% 0;
+}
+
+
+/*======== CUSTOM STYLING ========*/
+.section1{
+  height: 100vh;
+  padding: 0 6.7%;
+}
+.section1> div > h1{
+  --lineHeight: 1.0;
+  line-height: var(--lineHeight);
+}
+
+.section2{
+  display: block;
+  background-color: var(--lightGrey);
+  text-align: center;
 }
 
 /*======== MEDIA QUERIES ========*/
@@ -303,19 +347,36 @@ header {
   display: none;
  }
 
+ .section2{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 75vh;
+ }
+ .section2 + .section2{
+  height: 80vh;
+ }
+
+ .section-card{
+  margin: 0px;
+ }
+
 }
 
-/*======== CUSTOM STYLING ========*/
-.section1{
-  height: 100vh;
-  padding: 0 6.7%;
-}
-.section1> div > h1{
-  --lineHeight: 1.0;
-  line-height: var(--lineHeight);
+@media only screen and (min-width: 800px) {
+   .section2{
+  height: 65vh;
+ }
+  .section2 + .section2{
+    height: 70vh;
+   }
 }
 
-.section2{
-  padding: 0;
-  background-color: #222;
+@media only screen and (min-width: 1145px) {
+  .section2{
+    height: 55vh;
+   }
+  .section2 + .section2{
+    height: 55vh;
+   }
 }

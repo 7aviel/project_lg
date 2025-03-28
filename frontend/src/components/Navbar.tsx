@@ -44,7 +44,7 @@ export default function Navbar() {
       </button>
 
       {isMenuOpen && <div className="backdrop" onClick={closeMenu}></div>}
-      <nav className={`nav-menu ${isMenuOpen ? "open" : "hidden"}`}>
+      <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
         <button type="button" title="btn">
           <FontAwesomeIcon
             onClick={toggleMenu}
