@@ -178,6 +178,7 @@ header {
 
 .header-bg-light{
   background-color: var(--lightGrey);
+  box-shadow: var(--level-5);
 }
 .header-bg-light > nav > a {
   color: var(--darkGrey);
