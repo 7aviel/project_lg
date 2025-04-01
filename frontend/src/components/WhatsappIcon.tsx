@@ -4,7 +4,7 @@ import "react-whatsapp-widget/dist/index.css";
 const WhatsappIcon = () => {
   return (
     <WhatsAppWidget
-      companyName="LG Gestoria y Seguros"
+      companyName="Luisa Giampietri"
       replyTimeText="Típicamente responde en unos minutos"
       message={`¡Hola! 👋🏼 \n\n¿Que podemos hacer por vos?`}
       inputPlaceHolder="Escribe un mensaje"

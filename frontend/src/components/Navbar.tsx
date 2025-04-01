@@ -61,7 +61,7 @@ export default function Navbar() {
         <a href="#services">Servicios</a>
         <a href="#contact">Contacto</a>
         <a href="#about">Sobre Nosotros</a>
-        <a href="insurance">Seguros</a>
+        <a href="#insurance">Seguros</a>
         <button type="button">Presupuestar</button>
       </nav>
     </header>

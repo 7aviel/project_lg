@@ -1,6 +1,7 @@
 import SectionHome from "./SectionHome";
 import CardRow from "./CardRow";
 import WhatsappIcon from "./WhatsappIcon";
+import Contact from "./Contact/Contact";
 
 export default function Main() {
   return (
@@ -9,6 +10,7 @@ export default function Main() {
       <SectionHome />
       <CardRow />
       <CardRow />
+      <Contact />
     </main>
   );
 }

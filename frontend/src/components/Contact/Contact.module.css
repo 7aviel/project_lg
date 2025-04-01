@@ -1,0 +1,13 @@
+.contact{
+    color: var(--darkGrey);
+}
+
+.contact__container{
+    padding: 0 5%;
+}
+
+@media only screen and (min-width: 472px) {
+    .contact__container{
+        padding: 0 20%;
+    }
+}
