@@ -43,7 +43,7 @@ html{
   /*Colors*/
   --darkGrey: #222;
   --colorCharcoal: #465362; 
-  --colorOxfordBlue: #011936;
+  --colorDarkBrown: #141314;
   --lightGrey: #E7ECEF;
 
   /* Elevation */
@@ -103,7 +103,7 @@ p{
 
 /*======= BUTTONS ========*/
 button{
-  background-color: var(--colorOxfordBlue);
+  background-color: var(--colorDarkBrown);
   color: var(--lightGrey);
   font-family: var(--fontFamily);
   border-radius: var(--btnRadius);
@@ -146,7 +146,7 @@ a{
  transition: border-bottom 0.2s linear;
 }
 a:hover{
-  border-bottom: 0.2rem solid var(--colorOxfordBlue);
+  border-bottom: 0.2rem solid var(--colorDarkBrown);
   
 }
 
@@ -187,7 +187,7 @@ header {
   color: var(--darkGrey);
 }
 .header-bg-light > .mobile-bar { 
-  background: var(--colorOxfordBlue);
+  background: var(--colorDarkBrown);
 }
 
 
