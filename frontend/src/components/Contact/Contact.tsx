@@ -8,7 +8,12 @@ export default function Contact() {
         <label htmlFor="email">Email</label>
         <input id="email" type="text" placeholder="nombre@email.com" />
         <label htmlFor="phoneNumber">Numero de Teléfono</label>
-        <input type="number" id="phoneNumber" placeholder="+543411111111" />
+        <input
+          type="tel"
+          inputMode="tel"
+          id="phoneNumber"
+          placeholder="+543411111111"
+        />
         <label htmlFor="message">Mensaje</label>
         <textarea
           name="menssage"
