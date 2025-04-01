@@ -5,11 +5,11 @@ const WhatsappIcon = () => {
   return (
     <WhatsAppWidget
       companyName="LG Gestoria y Seguros"
-      replyTimeText="Típicamente responde en un día"
+      replyTimeText="Típicamente responde en unos minutos"
       message={`¡Hola! 👋🏼 \n\n¿Que podemos hacer por vos?`}
       inputPlaceHolder="Escribe un mensaje"
       sendButtonText="Enviar"
-      phoneNumber="543434402547"
+      phoneNumber="543434501551"
     />
   );
 };
