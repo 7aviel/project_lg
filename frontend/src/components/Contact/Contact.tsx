@@ -1,29 +1,69 @@
 import contactStyles from "./Contact.module.css";
+import Swal from "sweetalert2";
 
 export default function Contact() {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    formData.append("access_key", "90991a55-8abf-4519-929b-80edb7e5155c");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      Swal.fire({
+        title: "Enviado",
+        text: "Responderemos a la brevedad. ¡Gracias por contactarnos!",
+        icon: "success",
+        buttonsStyling: false,
+      });
+      (event.target as HTMLFormElement).reset();
+    } else {
+      Swal.fire({
+        title: "...Ops",
+        text: "Algo se rompió. Intentalo de nuevo",
+        icon: "error",
+        buttonsStyling: false,
+      });
+      (event.target as HTMLFormElement).reset();
+    }
+  };
+
   return (
     <section id="contact" className={contactStyles.contact}>
-      <div className={contactStyles.contact__container}>
-        <h1 className="flex content-center">Contacto</h1>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" placeholder="nombre@email.com" />
-        <label htmlFor="phoneNumber">Numero de Teléfono</label>
-        <input
-          type="tel"
-          inputMode="tel"
-          id="phoneNumber"
-          placeholder="+543411111111"
-        />
-        <label htmlFor="message">Mensaje</label>
-        <textarea
-          name="menssage"
-          id="message"
-          placeholder="Escribe aquí"
-        ></textarea>
-        <button title="submit" type="submit">
-          Enviar
-        </button>
-      </div>
+      <form onSubmit={onSubmit}>
+        <div className={contactStyles.contact__container}>
+          <h1 className="flex content-center">Contacto</h1>
+          <label htmlFor="nombre completo">Nombre Completo</label>
+          <input
+            type="text"
+            name="nombre completo"
+            placeholder="Nombre Completo"
+            required
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            placeholder="nombre@email.com"
+            name="email"
+            required
+          />
+
+          <label htmlFor="message">Mensaje</label>
+          <textarea
+            name="mensaje"
+            id="message"
+            placeholder="Escribe aquí"
+            required
+          ></textarea>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
     </section>
   );
 }

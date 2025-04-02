@@ -133,9 +133,9 @@ textarea{
   border: var(--lightGrey), solid, 1px;
   padding: 8px 20px;
   box-shadow: var(--level-4);
+  width: 100%;
 }
 textarea{
-  width: 100%;
   height: 10rem;
   resize: none;
   margin-bottom: 0.5rem;
