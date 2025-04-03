@@ -1,11 +1,9 @@
-import Main from "./components/Main";
-import Navbar from "./components/Navbar";
+import Home from "./views/Home";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Main />
+      <Home />
       <main>
         <section className="section2">
           <h1>STRIPEY.CSS</h1>

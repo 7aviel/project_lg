@@ -20,6 +20,7 @@ html{
   
   /*Img*/
   --bgImage: url('../images/bg_1.jpg');
+  --bgImage2: url('../images/bg_2.jpg');
 
   /*positioning*/
   --globalSpacing: 1.5rem;
@@ -113,6 +114,7 @@ button{
   box-shadow: var(--level-5);
   transition: 0.3s ease-in-out;
   appearance: none;
+  cursor: pointer;
 }
 
 button:hover{
@@ -157,7 +159,15 @@ a:active{
   border-bottom: 0.2rem solid var(--colorCharcoal);
 }
 
+.nonStylizedLink:hover{
+  border-bottom: 0px;
+}
+
 /*======== NAV ========*/
+
+.logo:hover{
+  border-bottom: 0px;
+}
 
 .logo__title{
   margin-left: var(--smallSpacing);

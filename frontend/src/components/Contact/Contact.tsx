@@ -35,7 +35,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className={contactStyles.contact}>
+    <section id="contacts" className={contactStyles.contact}>
       <form onSubmit={onSubmit}>
         <div className={contactStyles.contact__container}>
           <h1 className="flex content-center">Contacto</h1>

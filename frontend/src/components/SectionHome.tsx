@@ -1,6 +1,6 @@
 export default function SectionHome() {
   return (
-    <section className="flex center-items section1">
+    <section className="flex center-items section1 home">
       <div>
         <h1>Tramites y Seguros</h1>
         <h5>Nos encargamos de todo por vos</h5>

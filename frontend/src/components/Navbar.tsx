@@ -2,6 +2,9 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/logo.svg";
+import { NavHashLink } from "react-router-hash-link";
+
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +38,9 @@ export default function Navbar() {
       }`}
     >
       <div className="flex center-items">
-        <img src={logo} alt="logo" className="logo__img" />
+        <Link className="logo" to={"/"}>
+          <img src={logo} alt="logo" className="logo__img" />
+        </Link>
         <h1 className="logo__title">Gestoria y Seguros</h1>
       </div>
 
@@ -58,10 +63,14 @@ export default function Navbar() {
             size="xl"
           />
         </button>
-        <a href="#services">Servicios</a>
-        <a href="#contact">Contacto</a>
-        <a href="#about">Sobre Nosotros</a>
-        <a href="#insurance">Seguros</a>
+        <NavHashLink smooth to="/#services">
+          Servicios
+        </NavHashLink>
+        <NavHashLink smooth to="/#contacts">
+          Contacto
+        </NavHashLink>
+        <Link to={"/seguros"}>Seguros</Link>
+
         <button type="button">Presupuestar</button>
       </nav>
     </header>

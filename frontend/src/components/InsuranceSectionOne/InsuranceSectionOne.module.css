@@ -1,0 +1,12 @@
+.introduction{
+    background-image: linear-gradient(45deg,#4b313c, #01193685 ,#4653627a), var(--bgImage2);
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position-y: top;
+  max-height: 100vh;
+}
+
+.introduction__text{
+    max-width: 40vw;
+}
