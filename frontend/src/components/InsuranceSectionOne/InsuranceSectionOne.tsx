@@ -14,7 +14,9 @@ const InsuranceSectionOne = () => {
         <div className={insuranceSectionOneStyles.introduction__text}>
           <h1>¡Contrata un seguro con nosotros!</h1>
           <h5>Hacemos todo rapido y sencillo para vos</h5>
-          <button onClick={handleClick}>COTIZAR AHORA</button>
+          <div className={`flex space-around ${insuranceSectionOneStyles.btn}`}>
+            <button onClick={handleClick}>COTIZAR AHORA</button>
+          </div>
         </div>
       </section>
     </>

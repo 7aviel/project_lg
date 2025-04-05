@@ -304,6 +304,11 @@ header {
   text-align: justify;
   padding: 5% ;
   margin: 0 5% 0 5%;
+  background-color: rgb(241, 241, 241);
+}
+
+.card > p {
+  text-align: justify;
 }
 
 .section-card{

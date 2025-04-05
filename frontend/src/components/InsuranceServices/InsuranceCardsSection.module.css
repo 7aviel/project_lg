@@ -1,0 +1,8 @@
+.title{
+    color: var(--darkGrey);
+    padding: 2% 5% 0%;
+}
+
+.title > h1 {
+    line-height: 1.5;
+}

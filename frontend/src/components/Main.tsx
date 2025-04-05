@@ -11,7 +11,6 @@ export default function Main() {
       <TopButton />
       <SectionHome />
       <CardRow />
-      <CardRow />
       <Contact />
     </main>
   );
