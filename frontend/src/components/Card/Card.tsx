@@ -5,9 +5,10 @@ type Props = {
   icon: any; // Usa "any" para pasar un ícono directamente
   text: string;
   buttonText?: string;
+  btnOnClick?: () => void;
 };
 
-export default function Card({ icon, text, buttonText }: Props) {
+export default function Card({ icon, text, buttonText, btnOnClick }: Props) {
   return (
     <div className="section-card">
       <div className="card">
@@ -20,7 +21,11 @@ export default function Card({ icon, text, buttonText }: Props) {
         </div>
         <p className={`${styles.card__text}`}>{text}</p>
         <div className="flex content-center">
-          {buttonText && <button title="btn">{buttonText}</button>}
+          {buttonText && (
+            <button onClick={btnOnClick} title="btn">
+              {buttonText}
+            </button>
+          )}
         </div>
       </div>
     </div>

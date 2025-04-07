@@ -46,6 +46,7 @@ html{
   --colorCharcoal: #465362; 
   --colorDarkBrown: #141314;
   --lightGrey: #E7ECEF;
+  --cardBg: rgb(241, 241, 241);
 
   /* Elevation */
   --level-1: 0 0 0 1px rgba(0, 0, 0, 0.05);
@@ -304,7 +305,7 @@ header {
   text-align: justify;
   padding: 5% ;
   margin: 0 5% 0 5%;
-  background-color: rgb(241, 241, 241);
+  background-color: var(--cardBg);
 }
 
 .card > p {

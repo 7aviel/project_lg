@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Card from "../Card/Card";
 import styles from "./InsuranceCardsSection.module.css";
 import {
@@ -7,6 +8,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const InsuranceCardsSection = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    return navigate("/cotizar-seguro");
+  };
+
   return (
     <section>
       <div className={`${styles.title}`}>
@@ -27,6 +34,7 @@ const InsuranceCardsSection = () => {
           icon={faMotorcycle}
           text="Realizamos el procedimiento de alta en seguros para motocicletas"
           buttonText="Solicitar Alta Moto"
+          btnOnClick={handleClick}
         />
       </div>
     </section>
