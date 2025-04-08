@@ -128,6 +128,7 @@ label{
   font-size: var(--fontSize);
 }
 
+[type="checkbox"],
 input,
 textarea{
   font-size: var(--fontSize);
@@ -138,6 +139,17 @@ textarea{
   box-shadow: var(--level-4);
   width: 100%;
 }
+
+select{
+  font-size: var(--fontSize);
+  font-family: var(--fontFamily);
+  border-radius: 10px;
+  border: var(--lightGrey), solid, 1px;
+  padding: 8px 20px;
+  box-shadow: var(--level-4);
+  width: 100%;
+}
+
 textarea{
   height: 10rem;
   resize: none;

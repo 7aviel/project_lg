@@ -24,6 +24,7 @@ const InsuranceCardsSection = () => {
           icon={faMoneyBill1Wave}
           text="Te enviamos una cotización de acuerdo al seguro que necesites."
           buttonText="Presupuestar"
+          btnOnClick={handleClick}
         />
         <Card
           icon={faCarSide}
@@ -34,7 +35,6 @@ const InsuranceCardsSection = () => {
           icon={faMotorcycle}
           text="Realizamos el procedimiento de alta en seguros para motocicletas"
           buttonText="Solicitar Alta Moto"
-          btnOnClick={handleClick}
         />
       </div>
     </section>

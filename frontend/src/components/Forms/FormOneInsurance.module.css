@@ -1,3 +1,19 @@
 .bg{
     background-color: var(--lightGrey);
 }
+.checkbox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.checkbox__checkbox{
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.btn{
+    margin: var(--globalSpacing) 0 0 0;
+}
