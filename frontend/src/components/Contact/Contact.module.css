@@ -1,5 +1,6 @@
 .contact{
     color: var(--darkGrey);
+    padding: 0 0 5% 0;
 }
 
 .contact__container{
