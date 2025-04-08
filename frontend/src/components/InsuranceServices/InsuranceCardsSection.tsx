@@ -10,8 +10,16 @@ import {
 const InsuranceCardsSection = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClickOne = () => {
     return navigate("/cotizar-seguro");
+  };
+
+  const handleClickTwo = () => {
+    return navigate("/alta-auto");
+  };
+
+  const handleClickThree = () => {
+    return navigate("/alta-moto");
   };
 
   return (
@@ -24,17 +32,19 @@ const InsuranceCardsSection = () => {
           icon={faMoneyBill1Wave}
           text="Te enviamos una cotización de acuerdo al seguro que necesites."
           buttonText="Presupuestar"
-          btnOnClick={handleClick}
+          btnOnClick={handleClickOne}
         />
         <Card
           icon={faCarSide}
           text="Realizamos el procedimiento de alta en seguros para automotores"
           buttonText="Solicitar Alta Auto"
+          btnOnClick={handleClickTwo}
         />
         <Card
           icon={faMotorcycle}
           text="Realizamos el procedimiento de alta en seguros para motocicletas"
           buttonText="Solicitar Alta Moto"
+          btnOnClick={handleClickThree}
         />
       </div>
     </section>

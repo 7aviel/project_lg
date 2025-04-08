@@ -303,6 +303,11 @@ header {
   justify-content: center;
 }
 
+.space-evenly{
+  justify-content: space-evenly;
+}
+
+
 .center-items{
   align-items: center;
 }

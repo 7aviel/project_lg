@@ -1,0 +1,16 @@
+.backBtn{
+    display: none;
+    
+}
+
+@media only screen and (min-width: 506px) {
+    .backBtn{
+    display: block;
+    position: fixed;
+    left: 25px;
+    top: 25px;
+    border-radius: 100px;
+    padding: 15px 18px;
+    box-shadow: var(--level-7);
+    }
+}
