@@ -7,6 +7,7 @@ import InsurancePage from "./views/InsurancePage.tsx";
 import InsuranceFormOne from "./views/InsuranceFormOne.tsx";
 import CarInsFormPage from "./views/CarInsFormPage.tsx";
 import MotoFormsPage from "./views/MotoFormsPage.tsx";
+import CarBudgetPage from "./views/CarBudgetPage.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: "/cotizar-seguro", element: <InsuranceFormOne /> },
   { path: "/alta-auto", element: <CarInsFormPage /> },
   { path: "/alta-moto", element: <MotoFormsPage /> },
+  { path: "/presupuestar-auto", element: <CarBudgetPage /> },
 ]);
 
 createRoot(document.getElementById("root")!).render(

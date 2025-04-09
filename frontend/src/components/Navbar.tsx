@@ -4,7 +4,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/logo.svg";
 import { NavHashLink } from "react-router-hash-link";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,6 +30,12 @@ export default function Navbar() {
   };
 
   window.addEventListener("scroll", changeColor);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/presupuestar-auto");
+  };
 
   return (
     <header
@@ -71,7 +77,9 @@ export default function Navbar() {
         </NavHashLink>
         <Link to={"/seguros"}>Seguros</Link>
 
-        <button type="button">Presupuestar</button>
+        <button type="button" onClick={handleClick}>
+          Presupuestar
+        </button>
       </nav>
     </header>
   );

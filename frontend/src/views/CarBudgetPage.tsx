@@ -1,16 +1,16 @@
 import BackButton from "../components/BackButton/BackButton";
-import CarInsForm from "../components/Forms/CarCertForm/CarInsForm";
+import VehicleBudget from "../components/Forms/CarBudget/VehicleBudget";
 import { useHandleBack } from "../utils/useHandleClick";
 
-const CarInsFormPage = () => {
+const CarBudgetPage = () => {
   const handleClick = useHandleBack();
 
   return (
     <>
       <BackButton backTo={handleClick} />
-      <CarInsForm />
+      <VehicleBudget />
     </>
   );
 };
 
-export default CarInsFormPage;
+export default CarBudgetPage;
