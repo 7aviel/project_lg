@@ -8,7 +8,12 @@ type Props = {
 
 const BackButton = ({ backTo }: Props) => {
   return (
-    <button title="btn" className={`${styles.backBtn}`} onClick={backTo}>
+    <button
+      type="button"
+      title="btn"
+      className={`${styles.backBtn}`}
+      onClick={backTo}
+    >
       <FontAwesomeIcon icon={faArrowLeft} />
     </button>
   );

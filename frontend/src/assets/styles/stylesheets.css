@@ -128,7 +128,7 @@ label{
   font-size: var(--fontSize);
 }
 
-[type="checkbox"],
+
 input,
 textarea{
   font-size: var(--fontSize);
@@ -139,6 +139,41 @@ textarea{
   box-shadow: var(--level-4);
   width: 100%;
 }
+
+
+input[type = "file"] {
+  box-shadow: none;
+  border: none;
+  padding: 12px 0px;
+}
+
+input[type = "file"]::file-selector-button {
+  color: var(--lightGrey);
+  background-color: var(--colorDarkBrown);
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+input[type = "file"]::before{
+  content: "Subir imagen";
+  font-size: var(--smallText);
+  border-radius: var(--btnRadius);
+  border: var(--colorDarkBrown);
+  background-color: var(--colorDarkBrown);
+  color: var(--lightGrey);
+  padding: 10px 25px;
+  margin-right: 10px;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+input:hover::before{
+ background-color: var(--colorCharcoal);
+ border: var(--colorCharcoal);
+}
+
 
 select{
   font-size: var(--fontSize);

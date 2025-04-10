@@ -8,10 +8,8 @@ const MotoCertForm = () => {
       <div className="card-section flex space-around">
         <div className="card">
           <form action="">
-            <div className="flex center-items space-evenly">
-              <FontAwesomeIcon icon={faEnvelope} />
-              <label htmlFor="">Correo Electronico</label>
-            </div>
+            <label htmlFor="">Correo Electronico</label>
+
             <input
               type="email"
               name="email"
@@ -41,7 +39,9 @@ const MotoCertForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Foto del DNI (Frente y dorso) </label>
+              <label htmlFor="">
+                Foto del DNI (Frente y dorso)&nbsp;&nbsp;&nbsp; &nbsp;
+              </label>
             </div>
             <input
               type="file"

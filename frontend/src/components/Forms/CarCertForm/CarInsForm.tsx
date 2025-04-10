@@ -38,20 +38,25 @@ const CarInsForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Foto del DNI (Frente y dorso) </label>
+              <label htmlFor="">
+                Foto del DNI (Frente y dorso) &nbsp; &nbsp;
+              </label>
             </div>
-            <input
-              type="file"
-              name="image"
-              title="image"
-              accept="image/png, image/gif, image/jpeg"
-              multiple
-              required
-            />
+            <div>
+              <input
+                type="file"
+                name="image"
+                title="image"
+                id="dni"
+                accept="image/png, image/gif, image/jpeg"
+                multiple
+                required
+              />
+            </div>
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="">
-                4 fotos del vehículo desde diferentes ángulos más Foto de rueda
+                4 fotos del vehículo desde diferentes ángulos más foto de rueda
                 de auxilio
               </label>
             </div>
@@ -66,7 +71,10 @@ const CarInsForm = () => {
 
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Foto del tubo de GNC</label>
+              <label htmlFor="">
+                Foto del tubo de GNC &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </label>
             </div>
             <input
               type="file"
@@ -78,7 +86,10 @@ const CarInsForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Oblea del GNC vigente</label>
+              <label htmlFor="">
+                Oblea del GNC vigente&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </label>
             </div>
             <input
               type="file"
