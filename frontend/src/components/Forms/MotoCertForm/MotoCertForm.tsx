@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../InsBudget/FormOneInsurance.module.css";
-import { faCamera, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const MotoCertForm = () => {
   return (
