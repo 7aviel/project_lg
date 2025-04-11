@@ -1,11 +1,46 @@
 import styles from "../InsBudget/FormOneInsurance.module.css";
+import emailjs from "@emailjs/browser"; // Importa EmailJS
 
 const VehicleBudget = () => {
+  const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // Configura los datos del formulario y prepara la funcionalidad para enviar las imágenes y demás campos
+    const formData = new FormData(event.target as HTMLFormElement);
+    const emailData = {
+      email: formData.get("email"),
+      nombre: formData.get("nombre"),
+      phone: formData.get("phone"),
+      dni: formData.get("dni"),
+      province: formData.get("province"),
+      town: formData.get("town"),
+      address: formData.get("address"),
+      dominio: formData.get("dominio"),
+      price: formData.get("price"),
+      images: formData.get("images"), // Para enviar imágenes
+    };
+
+    emailjs
+      .send(
+        "service_ovjg8yl",
+        "template_qs9eix5",
+        emailData,
+        "jav_XZjMDuLYwwLue"
+      )
+      .then(() => {
+        alert("Formulario enviado con éxito.");
+      })
+      .catch((error) => {
+        console.error("Error al enviar el formulario: ", error);
+        alert("Hubo un problema al enviar el formulario.");
+      });
+  };
+
   return (
     <section className={`${styles.bg}`}>
       <div className="card-section flex space-around">
         <div className="card">
-          <form action="">
+          <form onSubmit={sendEmail} encType="multipart/form-data">
             <label htmlFor="">
               Datos de contacto comprador (como figura en DNI)
             </label>
@@ -22,7 +57,7 @@ const VehicleBudget = () => {
             <input
               type="text"
               name="nombre"
-              id=""
+              id="nombre"
               placeholder="nombre y apellido"
             />
             <label htmlFor="">DNI</label>
@@ -32,6 +67,7 @@ const VehicleBudget = () => {
               type="text"
               name="province"
               title="province"
+              id="province"
               placeholder="provincia"
             />
             <label htmlFor="">Localidad</label>
@@ -39,6 +75,7 @@ const VehicleBudget = () => {
               type="text"
               name="town"
               title="town"
+              id="town"
               placeholder="localidad"
             />
             <label htmlFor="">Domicilio</label>
@@ -46,6 +83,7 @@ const VehicleBudget = () => {
               type="text"
               name="address"
               title="address"
+              id="address"
               placeholder="domicilio"
             />
             <label htmlFor="">¿Que tipo de vehiculo es?</label>
