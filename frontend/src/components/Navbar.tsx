@@ -34,7 +34,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/presupuestar-auto");
+    navigate("/presupuestar");
   };
 
   return (

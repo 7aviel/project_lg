@@ -381,6 +381,9 @@ header {
   line-height: var(--lineHeight);
 }
 
+.section1 > div > div {
+  padding: 5% 0 0 0;
+}
 .section2{
   display: block;
   background-color: var(--lightGrey);
