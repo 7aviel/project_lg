@@ -1,11 +1,15 @@
 export default function SectionHome() {
+  const handleClick = () => {
+    window.location.href = "https://api.whatsapp.com/send?phone=543434501551";
+  };
+
   return (
     <section className="flex center-items section1 home">
       <div>
         <h1>Tramites y Seguros</h1>
         <h5>Nos encargamos de todo por vos</h5>
         <div className="flex space-around">
-          <button>Contáctanos</button>
+          <button onClick={handleClick}>Contáctanos</button>
         </div>
       </div>
     </section>
