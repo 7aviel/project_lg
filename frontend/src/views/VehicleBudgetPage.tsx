@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton/BackButton";
-import VehicleBudget from "../components/Forms/CarBudget/VehicleBudget";
+import VehicleBudget from "../components/Forms/CarAndMotoBudget/VehicleBudget";
 
 const VehicleBudgetPage = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/");
+    navigate("/presupuestar");
   };
 
   return (

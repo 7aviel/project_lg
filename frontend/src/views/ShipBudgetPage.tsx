@@ -5,7 +5,7 @@ import ShipBudget from "../components/ShipBudget/ShipBudget";
 const ShipBudgetPage = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/");
+    navigate("/presupuestar");
   };
 
   return (

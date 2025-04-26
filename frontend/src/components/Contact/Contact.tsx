@@ -37,6 +37,12 @@ export default function Contact() {
   return (
     <section id="contacts" className={contactStyles.contact}>
       <form onSubmit={onSubmit}>
+        <input
+          type="hidden"
+          name="Solicitud de Contacto"
+          id="contact"
+          value="Formulario de Contacto"
+        />
         <div className={contactStyles.contact__container}>
           <h1 className="flex content-center">Contacto</h1>
           <label htmlFor="nombre completo">Nombre Completo</label>

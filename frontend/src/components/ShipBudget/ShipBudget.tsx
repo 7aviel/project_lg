@@ -1,18 +1,74 @@
+import Swal from "sweetalert2";
 import styles from "../Forms/InsBudget/FormOneInsurance.module.css";
+import { useState } from "react";
 
 const ShipBudget = () => {
+  const WEB3FORMS_ACCESS_KEY = "90991a55-8abf-4519-929b-80edb7e5155c"; // Reemplaza con tu clave de Web3Forms
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Función para enviar datos con Web3Forms
+  const sendToBackend = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target as HTMLFormElement);
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al enviar los datos.");
+      }
+
+      Swal.fire({
+        title: "¡Formulario enviado!",
+        text: "Nos pondremos en contacto contigo pronto.",
+        icon: "success",
+        buttonsStyling: false,
+      });
+
+      (event.target as HTMLFormElement).reset();
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un problema al enviar el formulario. Intentalo de nuevo",
+        icon: "error",
+        buttonsStyling: false,
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className={`${styles.bg}`}>
       <div className="card-section flex space-around">
         <div className="card">
-          <form encType="multipart/form-data">
-            <label htmlFor="">
+          <form onSubmit={sendToBackend} encType="multipart/form-data">
+            <input
+              type="hidden"
+              name="Solicitud de Presupuesto de Embarcacion"
+              id="budget"
+              value="Formulario de presupuesto"
+            />
+            <label htmlFor="matricula">Matricula</label>
+            <input
+              type="text"
+              placeholder="Ejemplo: PARA03125"
+              name="Matricula"
+              id="matricula"
+            />
+            <label htmlFor="buyerData">
               Datos de contacto comprador (como figura en DNI)
             </label>
-            <label htmlFor="">Correo Electronico</label>
+            <label htmlFor="email">Correo Electronico</label>
             <input
               type="email"
-              name="email"
+              name="Email"
               id="email"
               placeholder="tuemail@email.com"
             />
@@ -21,122 +77,46 @@ const ShipBudget = () => {
             <label>Nombre y Apellido</label>
             <input
               type="text"
-              name="nombre"
+              name="Nombre y Apellido"
               id="nombre"
               placeholder="nombre y apellido"
             />
-            <label htmlFor="">DNI</label>
-            <input type="tel" title="dni" placeholder="DNI" />
-            <label htmlFor="">Provincia</label>
+            <label htmlFor="dni">DNI</label>
+            <input
+              type="tel"
+              title="dni"
+              id="dni"
+              name="DNI"
+              placeholder="DNI"
+            />
+            <label htmlFor="province">Provincia</label>
             <input
               type="text"
-              name="province"
+              name="Provincia"
               title="province"
               id="province"
               placeholder="provincia"
             />
-            <label htmlFor="">Localidad</label>
+            <label htmlFor="town">Localidad</label>
             <input
               type="text"
-              name="town"
+              name="Localidad"
               title="town"
               id="town"
               placeholder="localidad"
             />
-            <label htmlFor="">Domicilio</label>
+            <label htmlFor="address">Domicilio</label>
             <input
               type="text"
-              name="address"
+              name="Domicilio"
               title="address"
               id="address"
               placeholder="domicilio"
             />
-            <label htmlFor="">¿Que tipo de vehiculo es?</label>
-            <div className={`${styles.checkbox}`}>
-              <div className="flex">
-                <input
-                  title="vehicle_type"
-                  type="checkbox"
-                  id="car"
-                  name="car"
-                  className={`${styles.checkbox__checkbox}`}
-                />
-                <label htmlFor="car">Auto</label>
-              </div>
-              <div className="flex">
-                <input
-                  title="vehicle_type"
-                  type="checkbox"
-                  id="moto"
-                  name="moto"
-                  className={`${styles.checkbox__checkbox}`}
-                />
-                <label htmlFor="moto">Moto</label>
-              </div>
-            </div>
-            <label htmlFor="">Dominio (patente)</label>
-
-            <input
-              type="text"
-              name="dominio"
-              id="dominio"
-              placeholder="dominio"
-            />
-            <label htmlFor="">
-              ¿Tiene en su poder alguno de los sigueintes elementos?
-            </label>
-            <div className="flex">
-              <input
-                title="vehicle_type"
-                type="checkbox"
-                name="titulo"
-                className={`${styles.checkbox__checkbox}`}
-              />
-              <label htmlFor="titulo">Titulo</label>
-            </div>
-            <div className="flex">
-              <input
-                title="vehicle_type"
-                type="checkbox"
-                name="cedula"
-                className={`${styles.checkbox__checkbox}`}
-              />
-              <label htmlFor="cedula">Cedula</label>
-            </div>
-            <div className="flex">
-              <input
-                title="vehicle_type"
-                type="checkbox"
-                name="chapa"
-                className={`${styles.checkbox__checkbox}`}
-              />
-              <label htmlFor="chapa">Ambas chapas</label>
-            </div>
-            <div className="flex">
-              <input
-                title="vehicle_type"
-                type="checkbox"
-                name="verificacion"
-                className={`${styles.checkbox__checkbox}`}
-              />
-              <label htmlFor="verificacion">Verificacion</label>
-            </div>
-
-            <div className="flex">
-              <input
-                title="vehicle_type"
-                type="checkbox"
-                name="neither"
-                className={`${styles.checkbox__checkbox}`}
-              />
-              <label htmlFor="cedula">Ninguno</label>
-            </div>
-            <label htmlFor="">Precio de compra/venta</label>
-            <input title="price" type="tel" placeholder="precio" />
 
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>
-                Enviar
+                {isLoading ? "Enviando..." : "Enviar"}
               </button>
             </div>
           </form>
