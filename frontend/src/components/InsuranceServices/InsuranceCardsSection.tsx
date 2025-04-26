@@ -1,11 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../Card/Card";
 import styles from "./InsuranceCardsSection.module.css";
+import cardStyles from "../Card/Card.module.css";
 import {
   faMotorcycle,
   faCarSide,
   faMoneyBill1Wave,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InsuranceCardsSection = () => {
   const navigate = useNavigate();
@@ -29,19 +32,37 @@ const InsuranceCardsSection = () => {
       </div>
       <div className="section2">
         <Card
-          icon={faMoneyBill1Wave}
+          icon={
+            <FontAwesomeIcon
+              icon={faMoneyBill1Wave}
+              size="2xl"
+              className={`${cardStyles.card__icon}`}
+            />
+          }
           text="Te enviamos una cotización de acuerdo al seguro que necesites."
           buttonText="Presupuestar"
           btnOnClick={handleClickOne}
         />
         <Card
-          icon={faCarSide}
+          icon={
+            <FontAwesomeIcon
+              icon={faCarSide}
+              size="2xl"
+              className={`${cardStyles.card__icon}`}
+            />
+          }
           text="Realizamos el procedimiento de alta en seguros para automotores"
           buttonText="Solicitar Alta Auto"
           btnOnClick={handleClickTwo}
         />
         <Card
-          icon={faMotorcycle}
+          icon={
+            <FontAwesomeIcon
+              icon={faMotorcycle}
+              size="2xl"
+              className={`${cardStyles.card__icon}`}
+            />
+          }
           text="Realizamos el procedimiento de alta en seguros para motocicletas"
           buttonText="Solicitar Alta Moto"
           btnOnClick={handleClickThree}
