@@ -3,7 +3,7 @@ import styles from "./Card.module.css";
 type Props = {
   icon?: React.ReactNode; // Usa "any" para pasar un ícono directamente
   title?: string;
-  text: string;
+  text?: string;
   buttonText?: React.ReactNode;
   btnOnClick?: () => void;
 };

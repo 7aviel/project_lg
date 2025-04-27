@@ -12,8 +12,21 @@ import { useNavigate } from "react-router-dom";
 
 export default function CardRow() {
   const navigate = useNavigate();
-  const handleClick = () => {
+
+  const handleClickOne = () => {
+    window.location.href = "https://api.whatsapp.com/send?phone=543434501551";
+  };
+
+  const handleClickTwo = () => {
     navigate("/seguros");
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleClickThree = () => {
+    navigate("/presupuestar");
   };
 
   return (
@@ -38,6 +51,7 @@ export default function CardRow() {
               <FaPlus size={20} />
             </div>
           }
+          btnOnClick={handleClickOne}
         />
         <Card
           title="GESTORIA"
@@ -55,6 +69,7 @@ export default function CardRow() {
               <FaPlus size={20} />
             </div>
           }
+          btnOnClick={handleClickThree}
         />
         <Card
           title="SEGUROS"
@@ -72,7 +87,7 @@ export default function CardRow() {
               <FaPlus size={20} />
             </div>
           }
-          btnOnClick={handleClick}
+          btnOnClick={handleClickTwo}
         />
         <Card
           title="CREDITOS PRENDARIOS"
@@ -90,6 +105,7 @@ export default function CardRow() {
               <FaPlus size={20} />
             </div>
           }
+          btnOnClick={handleClickOne}
         />
       </section>
     </section>

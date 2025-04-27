@@ -15,6 +15,7 @@ const InsuranceSectionTwo = () => {
       </div>
       <div className="section2">
         <Card
+          title="SINIESTRO VIAL"
           icon={
             <FontAwesomeIcon
               icon={faCarBurst}
@@ -26,6 +27,7 @@ const InsuranceSectionTwo = () => {
           buttonText={<FaChevronCircleRight size={15} />}
         />
         <Card
+          title="ROTURA DE CRISTAL"
           icon={
             <GiCrackedGlass size={35} className={`${cardStyles.card__icon}`} />
           }
@@ -33,11 +35,13 @@ const InsuranceSectionTwo = () => {
           buttonText={<FaChevronCircleRight size={15} />}
         />
         <Card
+          title="ROBO DE RUEDAS"
           icon={<GiCarWheel size={35} className={`${cardStyles.card__icon}`} />}
           text="Solicitar denuncia de robo de ruedas"
           buttonText={<FaChevronCircleRight size={15} />}
         />
         <Card
+          title="SINIESTRO EN HOGAR"
           icon={
             <FaHouseCircleExclamation
               size={35}

@@ -37,6 +37,13 @@ export default function Navbar() {
     navigate("/presupuestar");
   };
 
+  const moveToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <header
       className={`flex space-between center-items ${
@@ -75,7 +82,9 @@ export default function Navbar() {
         <NavHashLink smooth to="/#contacts">
           Contacto
         </NavHashLink>
-        <Link to={"/seguros"}>Seguros</Link>
+        <Link to={"/seguros"} onClick={moveToTop}>
+          Seguros
+        </Link>
 
         <button type="button" onClick={handleClick}>
           Presupuestar
