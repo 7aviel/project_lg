@@ -1,11 +1,9 @@
 import styles from "../Forms/InsBudget/FormOneInsurance.module.css";
-import { useState } from "react";
+
 import formStyles from "../Forms/Form.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 const CarAccidentForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
     <section className={`${styles.bg}`}>
       <div className="card-section flex space-around">
@@ -146,7 +144,7 @@ const CarAccidentForm = () => {
             ></textarea>
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>
-                {isLoading ? "Enviando..." : "Enviar"}
+                Enviar
               </button>
             </div>
           </form>
