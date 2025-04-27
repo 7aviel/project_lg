@@ -1,0 +1,27 @@
+.card{
+    --cardWidth: 450px;
+    max-width: var(--cardWidth);
+    min-width: 250px;
+    border-radius: var(--btnRadius);
+    box-shadow: var(--level-5);
+    background-color: var(--lightGrey);
+    color: var(--darkGrey);
+    text-align: justify;
+    padding: 30px ;
+    margin: 0 5% 0 5%;
+    background-color: var(--cardBg);
+  }
+  
+  .card > p {
+    text-align: justify;
+  }
+  
+  .section-card{
+    display: flex;
+    justify-content: center;
+    margin: 10% 0 10% 0;
+  }
+
+  .textIcon{
+    padding: 0 0 0 3%;
+  }

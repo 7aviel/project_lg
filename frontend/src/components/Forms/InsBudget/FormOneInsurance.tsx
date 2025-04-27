@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./FormOneInsurance.module.css";
 import Swal from "sweetalert2";
+import formStyles from "../Form.module.css";
 
 const FormOneInsurance = () => {
   const [vehicleType, setVehicleType] = useState({ car: false, moto: false });
@@ -57,7 +58,7 @@ const FormOneInsurance = () => {
   return (
     <section className={`${styles.bg}`}>
       <div className="card-section flex space-around">
-        <div className="card">
+        <div className={formStyles.card}>
           <form onSubmit={sendToBackend} encType="multipart/form-data">
             <input
               type="hidden"

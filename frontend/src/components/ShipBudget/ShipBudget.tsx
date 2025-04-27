@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import styles from "../Forms/InsBudget/FormOneInsurance.module.css";
 import { useState } from "react";
+import formStyles from "../Forms/Form.module.css";
 
 const ShipBudget = () => {
   const WEB3FORMS_ACCESS_KEY = "90991a55-8abf-4519-929b-80edb7e5155c"; // Reemplaza con tu clave de Web3Forms
@@ -47,7 +48,7 @@ const ShipBudget = () => {
   return (
     <section className={`${styles.bg}`}>
       <div className="card-section flex space-around">
-        <div className="card">
+        <div className={formStyles.card}>
           <form onSubmit={sendToBackend} encType="multipart/form-data">
             <input
               type="hidden"

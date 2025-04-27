@@ -3,6 +3,7 @@ import styles from "../InsBudget/FormOneInsurance.module.css";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import formStyles from "../Form.module.css";
 
 const MotoCertForm = () => {
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB por archivo
@@ -116,7 +117,7 @@ const MotoCertForm = () => {
   return (
     <section className={styles.bg}>
       <div className="card-section flex space-around">
-        <div className="card">
+        <div className={formStyles.card}>
           <form onSubmit={sendToBackend} encType="multipart/form-data">
             <label htmlFor="">Correo Electronico</label>
 
@@ -142,7 +143,9 @@ const MotoCertForm = () => {
             </select>
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Foto de cedula (Frente y Dorso)</label>
+              <label htmlFor="" className={formStyles.textIcon}>
+                Foto de cedula (Frente y Dorso)
+              </label>
             </div>
             <input
               type="file"
@@ -155,7 +158,7 @@ const MotoCertForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">
+              <label htmlFor="" className={formStyles.textIcon}>
                 Foto del DNI (Frente y dorso)&nbsp;&nbsp;&nbsp; &nbsp;
               </label>
             </div>
@@ -170,7 +173,7 @@ const MotoCertForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">
+              <label htmlFor="" className={formStyles.textIcon}>
                 4 fotos de la moto desde diferentes ángulos más foto del chasis
               </label>
             </div>

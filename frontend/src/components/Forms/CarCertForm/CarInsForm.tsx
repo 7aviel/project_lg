@@ -3,6 +3,7 @@ import styles from "../InsBudget/FormOneInsurance.module.css";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import formStyles from "../Form.module.css";
 
 const CarInsForm = () => {
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB por archivo
@@ -89,8 +90,8 @@ const CarInsForm = () => {
 
   return (
     <section className={styles.bg}>
-      <div className="card-section flex space-around">
-        <div className="card">
+      <div className="flex space-around">
+        <div className={formStyles.card}>
           <form onSubmit={sendToBackend} encType="multipart/form-data">
             <label htmlFor="">Correo Electrónico</label>
             <input
@@ -115,9 +116,11 @@ const CarInsForm = () => {
               <option value="credito">Crédito</option>
               <option value="otro">Otro</option>
             </select>
-            <div className="flex center-items space-evenly">
+            <div className={` flex center-items space-evenly`}>
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Foto de cédula (Frente y Dorso)</label>
+              <label htmlFor="" className={formStyles.textIcon}>
+                Foto de cédula (Frente y Dorso)
+              </label>
             </div>
             <input
               type="file"
@@ -130,7 +133,9 @@ const CarInsForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Foto del DNI (Frente y dorso)</label>
+              <label htmlFor="" className={formStyles.textIcon}>
+                Foto del DNI (Frente y dorso)
+              </label>
             </div>
             <input
               type="file"
@@ -143,7 +148,7 @@ const CarInsForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">
+              <label htmlFor="" className={formStyles.textIcon}>
                 4 fotos del vehículo desde diferentes ángulos + rueda de auxilio
               </label>
             </div>
@@ -158,7 +163,9 @@ const CarInsForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Foto del tubo de GNC</label>
+              <label htmlFor="" className={formStyles.textIcon}>
+                Foto del tubo de GNC
+              </label>
             </div>
             <input
               type="file"
@@ -171,7 +178,9 @@ const CarInsForm = () => {
             />
             <div className="flex center-items space-evenly">
               <FontAwesomeIcon icon={faCamera} />
-              <label htmlFor="">Oblea del GNC vigente</label>
+              <label htmlFor="" className={formStyles.textIcon}>
+                Oblea del GNC vigente
+              </label>
             </div>
             <input
               type="file"
