@@ -9,7 +9,7 @@ type Props = {
 const BackButton = ({ backTo }: Props) => {
   return (
     <button
-      type="button"
+      type="submit"
       title="btn"
       className={`${styles.backBtn}`}
       onClick={backTo}

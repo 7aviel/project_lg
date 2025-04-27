@@ -32,6 +32,7 @@ html{
   --fontSize: 100%;
   --lineHeight: 1.6;
   --smallLineHeight: 1;
+  --xsLineHeight: 0.5;
   --smallText: 0.8em;
   --fontFamily: 'Inter', sans-serif;
   --h1: 3.052rem; 
@@ -116,6 +117,10 @@ button{
   transition: 0.3s ease-in-out;
   appearance: none;
   cursor: pointer;
+}
+
+button>div>p{
+  margin-bottom: 0;
 }
 
 button:hover{
@@ -347,6 +352,10 @@ header {
   align-items: center;
 }
 
+.top-padding-sm{
+  padding: 2% 0 0 0;
+}
+
 /*======== CARDS ========*/
 .card{
   max-width: var(--cardWidth);
@@ -355,7 +364,7 @@ header {
   background-color: var(--lightGrey);
   color: var(--darkGrey);
   text-align: justify;
-  padding: 5% ;
+  padding: 7% ;
   margin: 0 5% 0 5%;
   background-color: var(--cardBg);
 }
@@ -388,6 +397,20 @@ header {
   display: block;
   background-color: var(--lightGrey);
   text-align: center;
+}
+
+/*============= TEXT ============*/
+.text-align-center{
+  text-align: center;
+}
+
+.line-height-sm{
+  --smallLineHeight:1.2;
+  line-height: var(--smallLineHeight);
+}
+
+.color-dark-grey > h1{
+  color: var(--darkGrey);
 }
 
 /*======== MEDIA QUERIES ========*/
