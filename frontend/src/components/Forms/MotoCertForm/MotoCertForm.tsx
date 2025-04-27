@@ -141,7 +141,7 @@ const MotoCertForm = () => {
               <option value="Crédito">Crédito</option>
               <option value="Otro">Otro</option>
             </select>
-            <div className="flex center-items space-evenly">
+            <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 Foto de cedula (Frente y Dorso)
@@ -156,7 +156,7 @@ const MotoCertForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
-            <div className="flex center-items space-evenly">
+            <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 Foto del DNI (Frente y dorso)&nbsp;&nbsp;&nbsp; &nbsp;
@@ -171,7 +171,7 @@ const MotoCertForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
-            <div className="flex center-items space-evenly">
+            <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 4 fotos de la moto desde diferentes ángulos más foto del chasis

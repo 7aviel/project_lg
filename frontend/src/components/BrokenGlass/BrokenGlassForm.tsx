@@ -1,0 +1,90 @@
+import styles from "../Forms/InsBudget/FormOneInsurance.module.css";
+import { useState } from "react";
+import formStyles from "../Forms/Form.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+
+const BrokenGlassForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  return (
+    <section className={`${styles.bg}`}>
+      <div className="card-section flex space-around">
+        <div className={formStyles.card}>
+          <form encType="multipart/form-data">
+            <input
+              type="hidden"
+              name="Solicitud de denuncia"
+              id="accident"
+              value="Formulario de Siniestro en el hogar"
+              required
+            />
+            <label htmlFor="email">Correo Electrónico</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="tuemail@email.com"
+              required
+            />
+            <label htmlFor="tel">Teléfono de contacto</label>
+            <input
+              type="tel"
+              id="tel"
+              name="phone"
+              title="phone"
+              placeholder="+54 (343) 00000000"
+              required
+            />
+            <label htmlFor="street_address">Calle y altura</label>
+            <input
+              type="text"
+              placeholder="Calle y altura"
+              name="Calle"
+              id="street_address"
+              required
+            />
+            <label htmlFor="town">Localida</label>
+            <input
+              type="text"
+              id="town"
+              name="Localidad"
+              placeholder="Localidad"
+            />
+            <label htmlFor="time">Dia, fecha y hora del evento</label>
+            <input type="datetime-local" name="Fecha" id="time" required />
+            <label htmlFor="wheel">¿Que cristal fue dañado?</label>
+            <input
+              type="text"
+              name="Rueda"
+              id="wheel"
+              placeholder="Escribir"
+              required
+            />
+            <div className="flex center-items ">
+              <FontAwesomeIcon icon={faCamera} />
+              <label htmlFor="" className={formStyles.textIcon}>
+                Foto del cristal dañado
+              </label>
+            </div>
+            <input
+              type="file"
+              name="denunciaPolicial"
+              title="denuncia"
+              accept="image/png, image/jpeg"
+              multiple
+              required
+            />
+            <div className="flex space-around">
+              <button title="btn" className={`${styles.btn}`}>
+                {isLoading ? "Enviando..." : "Enviar"}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default BrokenGlassForm;

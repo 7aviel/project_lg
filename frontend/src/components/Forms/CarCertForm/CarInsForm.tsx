@@ -116,7 +116,7 @@ const CarInsForm = () => {
               <option value="credito">Crédito</option>
               <option value="otro">Otro</option>
             </select>
-            <div className={` flex center-items space-evenly`}>
+            <div className={` flex center-items `}>
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 Foto de cédula (Frente y Dorso)
@@ -131,7 +131,7 @@ const CarInsForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
-            <div className="flex center-items space-evenly">
+            <div className="flex center-items">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 Foto del DNI (Frente y dorso)
@@ -146,7 +146,7 @@ const CarInsForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
-            <div className="flex center-items space-evenly">
+            <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 4 fotos del vehículo desde diferentes ángulos + rueda de auxilio
@@ -161,7 +161,7 @@ const CarInsForm = () => {
               required
               onChange={(e) => handleFileChange(e, 5)}
             />
-            <div className="flex center-items space-evenly">
+            <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 Foto del tubo de GNC
@@ -176,7 +176,7 @@ const CarInsForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
-            <div className="flex center-items space-evenly">
+            <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
                 Oblea del GNC vigente
