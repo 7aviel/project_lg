@@ -3,19 +3,56 @@ import styles from "../Forms/InsBudget/FormOneInsurance.module.css";
 import formStyles from "../Forms/Form.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
+import { useState } from "react";
 const CarAccidentForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const sendToBackend = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        "http://localhost:5000/car-accident/send-car-accident",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Error del servidor: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      Swal.fire({
+        title: "¡Correo enviado!",
+        text: result.message,
+        icon: "success",
+        buttonsStyling: false,
+      });
+      (event.target as HTMLFormElement).reset();
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "No se pudo enviar el correo. Intenta nuevamente.",
+        icon: "error",
+        buttonsStyling: false,
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className={`${styles.bg}`}>
       <div className="card-section flex space-around">
         <div className={formStyles.card}>
-          <form encType="multipart/form-data">
-            <input
-              type="hidden"
-              name="Solicitud de denuncia"
-              id="accident"
-              value="Formulario de Siniestro en el hogar"
-              required
-            />
+          <form onSubmit={sendToBackend} encType="multipart/form-data">
             <label htmlFor="email">Correo Electrónico</label>
             <input
               type="email"
@@ -47,6 +84,7 @@ const CarAccidentForm = () => {
               id="town"
               name="Localidad"
               placeholder="Localidad"
+              required
             />
             <label htmlFor="street_address">Calle y altura</label>
             <input
@@ -67,9 +105,9 @@ const CarAccidentForm = () => {
             </div>
             <input
               type="file"
-              name="denunciaPolicial"
-              title="denuncia"
+              name="fotoDeLicencia"
               accept="image/png, image/jpeg"
+              placeholder="Foto de licencia"
               multiple
               required
             />
@@ -92,9 +130,9 @@ const CarAccidentForm = () => {
             </div>
             <input
               type="file"
-              name="denunciaPolicial"
-              title="denuncia"
+              name="fotoDocumentacionOtro"
               accept="image/png, image/jpeg"
+              placeholder="Foto documentacion"
               multiple
               required
             />
@@ -107,9 +145,9 @@ const CarAccidentForm = () => {
             </div>
             <input
               type="file"
-              name="denunciaPolicial"
-              title="denuncia"
+              name="cedulaYSeguro"
               accept="image/png, image/jpeg"
+              placeholder="Documentacion otro vehiculo"
               multiple
               required
             />
@@ -121,30 +159,32 @@ const CarAccidentForm = () => {
             </div>
             <input
               type="file"
-              name="denunciaPolicial"
-              title="denuncia"
+              name="daniosFotos"
               accept="image/png, image/jpeg"
+              placeholder="Fotos de daños"
               multiple
-              required
-            />
-            <label htmlFor="damage">Detalles de los daños</label>
-            <input
-              type="text"
-              name="damage"
-              id="damage"
-              placeholder="Daños"
               required
             />
             <label htmlFor="damage">Detalle de los daños</label>
             <textarea
-              name="Mensaje"
+              name="detalles"
               id="damage"
               placeholder="Detalle aquí"
               required
             ></textarea>
+            <label htmlFor="details">
+              Relato por Escrito de Cómo Ocurrió el Siniestro
+            </label>
+            <textarea
+              name="mensaje"
+              id="details"
+              placeholder="Detalle aquí"
+              required
+            ></textarea>
+
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>
-                Enviar
+                {isLoading ? "Enviando..." : "Enviar"}
               </button>
             </div>
           </form>
