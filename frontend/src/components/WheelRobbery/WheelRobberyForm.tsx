@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Swal from "sweetalert2";
+const API_URL = import.meta.env.VITE_API_URL;
+
 const WheelRobberyForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,7 +18,7 @@ const WheelRobberyForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/wheel-robbery/send-wheel-robbery",
+        `${API_URL}/wheel-robbery/send-wheel-robbery`,
         {
           method: "POST",
           body: formData,

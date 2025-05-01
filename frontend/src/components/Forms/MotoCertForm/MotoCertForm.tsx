@@ -4,7 +4,7 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import formStyles from "../Form.module.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const MotoCertForm = () => {
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB por archivo
   const [isLoading, setIsLoading] = useState(false);
@@ -85,7 +85,7 @@ const MotoCertForm = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/moto/send-moto", {
+      const response = await fetch(`${API_URL}/moto/send-moto`, {
         method: "POST",
         body: formData,
       });

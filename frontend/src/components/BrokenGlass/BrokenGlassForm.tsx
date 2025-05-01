@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import { useState } from "react";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const BrokenGlassForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -17,7 +17,7 @@ const BrokenGlassForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/broken-glass/send-broken-glass",
+        `${API_URL}/broken-glass/send-broken-glass`,
         {
           method: "POST",
           body: formData,

@@ -4,6 +4,7 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import formStyles from "../Form.module.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const CarInsForm = () => {
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB por archivo
@@ -59,7 +60,7 @@ const CarInsForm = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/auto/send-auto", {
+      const response = await fetch(`${API_URL}/auto/send-auto`, {
         method: "POST",
         body: formData,
       });

@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import { useState } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CarAccidentForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -17,7 +19,7 @@ const CarAccidentForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/car-accident/send-car-accident",
+        `${API_URL}/car-accident/send-car-accident`,
         {
           method: "POST",
           body: formData,
