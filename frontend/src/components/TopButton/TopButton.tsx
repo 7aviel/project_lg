@@ -27,6 +27,7 @@ const TopButton = () => {
     <>
       {showButton && (
         <button
+          type="button"
           title="btn"
           onClick={scrollY}
           className={topButtonStyles.topButton}
