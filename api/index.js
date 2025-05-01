@@ -27,9 +27,4 @@ app.get("/api/test", (req, res) => {
     res.json({ mensaje: "¡Backend funcionando en Vercel!" });
   });
 
-  // Handle requests by serving index.html for all routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
-});
-  
 module.exports = app;
