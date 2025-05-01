@@ -5,7 +5,7 @@
     align-items: center;
     color: var(--darkGrey);
     padding: 0 5% 0 5%;
-    min-height: 180vh;
+    min-height: 150vh;
 }
 
 .about__img{
@@ -42,13 +42,13 @@
 
 @media only screen and (min-width: 400px){
     .about{
-        min-height: 150vh;
+        min-height: 140vh;
     }
   }
 
   @media only screen and (min-width: 500px){
     .about{
-        min-height: 130vh;
+        min-height: 120vh;
     }
   }
 

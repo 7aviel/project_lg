@@ -1,9 +1,12 @@
 import { FaFacebook, FaLinkedinIn, FaPlus } from "react-icons/fa";
 import aboutStyles from "./AboutStyles.module.css";
-import img from "./test.png";
 import { RiWhatsappFill } from "react-icons/ri";
 
-const AboutComponent = () => {
+type Props = {
+  imgSrc: string | undefined;
+};
+
+const AboutComponent = ({ imgSrc }: Props) => {
   const handleClick = () => {
     window.location.href = "https://api.whatsapp.com/send?phone=543434501551";
   };
@@ -15,7 +18,7 @@ const AboutComponent = () => {
       </h1>
       <section className={aboutStyles.about}>
         <div className="flex content-center">
-          <img className={aboutStyles.about__img} src={img} alt="about" />
+          <img className={aboutStyles.about__img} src={imgSrc} alt="about" />
         </div>
         <div className={`${aboutStyles.about__div2}`}>
           <h4 className={aboutStyles.about__div2__title}>Luisa Giampietri</h4>
