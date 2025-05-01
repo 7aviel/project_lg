@@ -19,8 +19,8 @@ html{
 :root {
   
   /*Img*/
-  --bgImage: url('../images/bg_1.jpg');
-  --bgImage2: url('../images/bg_2.jpg');
+  --bgImage: url('../images/bg_1.webp');
+  --bgImage2: url('../images/bg_2.webp');
 
   /*positioning*/
   --globalSpacing: 1.5rem;
