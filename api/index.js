@@ -27,7 +27,7 @@ app.get("/api/test", (req, res) => {
     res.json({ mensaje: "¡Backend funcionando en Vercel!" });
   });
 
- // Handle unmatched routes and serve index.html
+// Handle unmatched routes and serve index.html
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
