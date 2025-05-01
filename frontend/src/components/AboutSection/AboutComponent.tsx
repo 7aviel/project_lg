@@ -4,8 +4,12 @@ import img from "./test.png";
 import { RiWhatsappFill } from "react-icons/ri";
 
 const AboutComponent = () => {
+  const handleClick = () => {
+    window.location.href = "https://api.whatsapp.com/send?phone=543434501551";
+  };
+
   return (
-    <section className={aboutStyles.mainSection}>
+    <section className={aboutStyles.mainSection} id="about">
       <h1 className={`${aboutStyles.about__title} flex content-center`}>
         Sobre nosotros
       </h1>
@@ -27,7 +31,7 @@ const AboutComponent = () => {
             con rapidez, transparencia y tranquilidad.
           </p>
           <div className="flex space-between center-items">
-            <button title="btn" type="submit">
+            <button title="btn" type="submit" onClick={handleClick}>
               <div className="flex space-around">
                 <p>Saber &nbsp;</p>
                 <FaPlus size={20} />

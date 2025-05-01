@@ -82,6 +82,9 @@ export default function Navbar() {
         <NavHashLink smooth to="/#contacts">
           Contacto
         </NavHashLink>
+        <NavHashLink smooth to="/#about">
+          Nosotros
+        </NavHashLink>
         <Link to={"/seguros"} onClick={moveToTop}>
           Seguros
         </Link>
