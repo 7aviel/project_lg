@@ -1,4 +1,4 @@
-import { FaFacebook, FaFacebookF, FaLinkedinIn, FaPlus } from "react-icons/fa";
+import { FaFacebook, FaLinkedinIn, FaPlus } from "react-icons/fa";
 import aboutStyles from "./AboutStyles.module.css";
 import img from "./test.png";
 import { RiWhatsappFill } from "react-icons/ri";
