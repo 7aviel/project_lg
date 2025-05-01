@@ -131,6 +131,11 @@ const CarInsForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
+            <input
+              type="hidden"
+              name="cedulaDescription"
+              value="Foto de cedula"
+            />
             <div className="flex center-items">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
@@ -146,6 +151,7 @@ const CarInsForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
+            <input type="hidden" name="idDescription" value="Foto de DNI" />
             <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
@@ -160,6 +166,11 @@ const CarInsForm = () => {
               multiple
               required
               onChange={(e) => handleFileChange(e, 5)}
+            />
+            <input
+              type="hidden"
+              name="vehicleDescription"
+              value="Fotos del vehiculo"
             />
             <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
@@ -176,6 +187,11 @@ const CarInsForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
+            <input
+              type="hidden"
+              name="gncTubeDescription"
+              value="Foto del tubo GNC"
+            />
             <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
@@ -190,6 +206,11 @@ const CarInsForm = () => {
               multiple
               required
               onChange={(e) => handleFileChange(e, 2)}
+            />
+            <input
+              type="hidden"
+              name="gncObleaDescription"
+              value="Foto de GNC vigente"
             />
             <div className="flex space-around">
               <button

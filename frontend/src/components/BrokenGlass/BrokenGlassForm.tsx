@@ -110,6 +110,11 @@ const BrokenGlassForm = () => {
               multiple
               required
             />
+            <input
+              type="hidden"
+              name="descripcionCristalRoto"
+              value="Foto/s de cristal dañado"
+            />
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>
                 {isLoading ? "Enviando..." : "Enviar"}

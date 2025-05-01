@@ -109,6 +109,11 @@ const WheelRobberyForm = () => {
               multiple
               required
             />
+            <input
+              type="hidden"
+              name="descripcionDenunciaPolicial"
+              value="Denuncia Policial"
+            />
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>
                 {isLoading ? "Enviando..." : "Enviar"}

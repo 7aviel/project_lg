@@ -111,6 +111,11 @@ const CarAccidentForm = () => {
               multiple
               required
             />
+            <input
+              type="hidden"
+              name="descripcionFotoDeLicencia"
+              value="Descripción de la foto de licencia"
+            />
             <label htmlFor="dominio">
               Datos del Vehículo Asegurado: Dominio.
             </label>
@@ -136,6 +141,11 @@ const CarAccidentForm = () => {
               multiple
               required
             />
+            <input
+              type="hidden"
+              name="descripcionFotoDocumentacionOtro"
+              value="Fotos de la documentacion de la otra persona"
+            />
             <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
@@ -151,6 +161,11 @@ const CarAccidentForm = () => {
               multiple
               required
             />
+            <input
+              type="hidden"
+              name="descripcionCedulaYSeguro"
+              value="Cedula, seguro del otro vehiculo"
+            />
             <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
@@ -164,6 +179,11 @@ const CarAccidentForm = () => {
               placeholder="Fotos de daños"
               multiple
               required
+            />
+            <input
+              type="hidden"
+              name="descripcionDaniosFotos"
+              value="Fotos de los daños"
             />
             <label htmlFor="damage">Detalle de los daños</label>
             <textarea

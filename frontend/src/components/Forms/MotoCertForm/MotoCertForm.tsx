@@ -156,6 +156,11 @@ const MotoCertForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
+            <input
+              type="hidden"
+              name="cedulaDescription"
+              value="Foto de cedula"
+            />
             <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
@@ -171,6 +176,7 @@ const MotoCertForm = () => {
               required
               onChange={(e) => handleFileChange(e, 2)}
             />
+            <input type="hidden" name="idDescription" value="Foto de DNI" />
             <div className="flex center-items ">
               <FontAwesomeIcon icon={faCamera} />
               <label htmlFor="" className={formStyles.textIcon}>
@@ -186,7 +192,11 @@ const MotoCertForm = () => {
               required
               onChange={(e) => handleFileChange(e, 5)}
             />
-
+            <input
+              type="hidden"
+              name="motoImagesDescription"
+              value="Fotos de la moto"
+            />
             <div className="flex space-around">
               <button
                 type="submit"
