@@ -20,4 +20,9 @@ app.use("/api/wheel-robbery", wheelRobberyRoutes);
 app.use("/api/broken-glass", brokenGlassRoutes);
 app.use("/api/car-accident", carAccidentRoutes);
 
+app.get("/api/test", (req, res) => {
+    res.json({ mensaje: "¡Backend funcionando en Vercel!" });
+  });
+  
+
 module.exports = app;
