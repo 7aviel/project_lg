@@ -3,6 +3,18 @@
     padding: 0 0 0 5%;
 }
 
-.title > h1 {
+div > h1 {
     line-height: 1.5;
 }
+
+@media only screen and (min-width: 720px){
+    .section__title{
+        padding: 5% 0 5% 5%;
+    }
+  }
+
+  @media only screen and (min-width: 1060px){
+    .section__title{
+        padding: 0 0 0 5%;
+    }
+  }

@@ -321,13 +321,21 @@ header {
   background-size: cover;
   background-position: center;
   background-position-y: top;
-  max-height: 100vh;
+  max-height: 80vh;
 }
 
 /*======== LAYOUT ========*/
 
 .flex{
   display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.flex-row{
+  flex-direction: row;
 }
 
 .space-between{

@@ -4,7 +4,8 @@ import WhatsappIcon from "./WhatsappIcon";
 import Contact from "./Contact/Contact";
 import TopButton from "./TopButton/TopButton";
 import AboutComponent from "./AboutSection/AboutComponent";
-import img from "../assets/images/logo.svg";
+import FooterComponent from "./FooterComponent/FooterComponent";
+import logo from "../assets/images/logo.svg";
 
 export default function Main() {
   return (
@@ -12,9 +13,10 @@ export default function Main() {
       <WhatsappIcon />
       <TopButton />
       <SectionHome />
+      <AboutComponent />
       <CardRow />
       <Contact />
-      <AboutComponent imgSrc={img} />
+      <FooterComponent logo={logo} />
     </main>
   );
 }
