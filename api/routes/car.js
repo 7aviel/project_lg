@@ -18,7 +18,7 @@ router.post("/send-auto", upload.fields([
   const { email, phone, payment, cedulaDescription, idDescription, vehicleDescription, gncTubeDescription, gncObleaDescription } = req.body;
   const files = req.files;
   const uploadedFiles = [];
-  const folderId = "14IrMbLdkLzkw4S07QFSpOS1cuRsV-wSg"; // Reemplaza con tu carpeta de Drive
+  const folderId = "13M4NddKzCUqxavWQ58x96GsGSaM729tK"; // Reemplaza con tu carpeta de Drive
   const subject = "Solicitud de alta de auto"
 
   try {

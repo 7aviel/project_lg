@@ -16,7 +16,7 @@ router.post("/send-moto", upload.fields([
   const { email, phone, payment, cedulaDescription, idDescription, motoImagesDescription } = req.body;
   const files = req.files;
   const uploadedFiles = [];
-  const folderId = "14IrMbLdkLzkw4S07QFSpOS1cuRsV-wSg"; // Reemplaza con el ID de tu carpeta en Google Drive
+  const folderId = "1LoOWqXW33Hjd_67PFgwbS-VOK6Jn6W3b"; // Reemplaza con el ID de tu carpeta en Google Drive
   const subject = "Solicitud de alta moto"
 
   try {

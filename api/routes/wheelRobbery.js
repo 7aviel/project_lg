@@ -14,7 +14,7 @@ router.post("/send-wheel-robbery", upload.fields([
   const { email, phone, Calle, Localidad, Fecha, Rueda, descripcionDenunciaPolicial} = req.body;
   const files = req.files;
   const uploadedFiles = [];
-  const folderId = "14IrMbLdkLzkw4S07QFSpOS1cuRsV-wSg"; // Reemplaza con tu carpeta en Google Drive
+  const folderId = "1yiIZy2e2rg_U-GI7MNNXveEpaJqO1sGV"; // Reemplaza con tu carpeta en Google Drive
 
   try {
     //Subir descripciones

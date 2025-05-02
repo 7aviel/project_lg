@@ -14,7 +14,7 @@ const sendEmail = async (emailText, subject) => {
 
   const mailOptions = {
     from: '"Gestoría & Seguros" <' + process.env.MAILSEND_USER + '>',
-    to: "vilcheariel1@gmail.com",
+    to: "luigiampietri@lg-gestoriayseguros.com",
     subject: subject,
     text: emailText
   };

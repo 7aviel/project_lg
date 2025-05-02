@@ -422,12 +422,24 @@ header {
   color: var(--darkGrey);
 }
 
+/*============= MAP ==============*/
+
+.map-container {
+  height: 250px;
+  min-width: 82vw;
+  border: 2px solid rgb(247, 247, 247);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
 /*======== MEDIA QUERIES ========*/
 
 @media only screen and (min-width: 460px){
   .logo__title{
     font-size: var(--h5);
   }
+  
 }
 
 @media only screen and (min-width: 916px)  {

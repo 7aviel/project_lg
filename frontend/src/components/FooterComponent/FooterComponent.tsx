@@ -1,33 +1,23 @@
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
-import { NavHashLink } from "react-router-hash-link";
+import CustomMap from "../CustomMap/CustomMap";
+import { FaCopyright, FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 type Props = {
   logo: string;
 };
 
 const FooterComponent = ({ logo }: Props) => {
-  const moveToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  const handleClickOne = () => {
+    window.location.href = "mailto:vilcheariel1@gmail.com";
   };
+  const handleClickTwo = () => {
+    window.location.href = "https://www.linkedin.com/in/ariel-vilche/";
+  };
+
   return (
     <footer className={`${styles.footer} flex space-evenly`}>
-      <div className={`${styles.footer__link}`}>
-        <NavHashLink smooth to="/#services">
-          Servicios
-        </NavHashLink>
-        <NavHashLink smooth to="/#contacts">
-          Contacto
-        </NavHashLink>
-        <NavHashLink smooth to="/#about">
-          Nosotros
-        </NavHashLink>
-        <NavHashLink to={"/seguros"} onClick={moveToTop}>
-          Seguros
-        </NavHashLink>
-      </div>
       <div className="flex center-items">
         <Link className="logo" to={"/"}>
           <img src={logo} alt="logo" className="logo__img" />
@@ -35,7 +25,30 @@ const FooterComponent = ({ logo }: Props) => {
         <h1 className="logo__title">Gestoria y Seguros</h1>
       </div>
       <div>
-        <h1>MAP HERE</h1>
+        <CustomMap />
+      </div>
+      <div className="flex content-center center-items flex-column">
+        <p className={`${styles.developer}`}>
+          Sitio diseñado y desarrollado por Ariel Vilche&nbsp;&nbsp;
+          <span>
+            <a onClick={handleClickOne}>
+              <MdEmail />
+            </a>
+          </span>
+          &nbsp;&nbsp;
+          <span>
+            <a onClick={handleClickTwo}>
+              <FaLinkedinIn />
+            </a>
+          </span>
+        </p>
+        <p className={styles.developer}>
+          Gestoria y seguros Luisa Giampietri. Todos los derechos
+          reservados&nbsp;&nbsp;
+          <span>
+            <FaCopyright />
+          </span>
+        </p>
       </div>
     </footer>
   );

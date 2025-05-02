@@ -17,7 +17,7 @@ router.post("/send-car-accident", upload.fields([
   const { email, phone, Provincia, Localidad, Calle, Fecha, dominio, detalles, mensaje, descripcionFotoDeLicencia, descripcionFotoDocumentacionOtro, descripcionDaniosFotos, descripcionCedulaYSeguro } = req.body;
   const files = req.files;
   const uploadedFiles = [];
-  const folderId = "14IrMbLdkLzkw4S07QFSpOS1cuRsV-wSg";
+  const folderId = "1-pxoHF8ni8eiPBxxZh_4G_9sFcxMSrcz";
   const subject = "Denuncia de accidente automovilístico";
 
   try {
