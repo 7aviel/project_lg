@@ -54,7 +54,7 @@ export default function Navbar() {
         <Link className="logo" to={"/"}>
           <img src={logo} alt="logo" className="logo__img" />
         </Link>
-        <h1 className="logo__title">Gestoria y Seguros</h1>
+        <h1 className="logo__title">Gestoría y Seguros</h1>
       </div>
 
       <button

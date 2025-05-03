@@ -1,12 +1,13 @@
 import contactStyles from "./Contact.module.css";
 import Swal from "sweetalert2";
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3_FORM;
 
 export default function Contact() {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
 
-    formData.append("access_key", "90991a55-8abf-4519-929b-80edb7e5155c");
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",

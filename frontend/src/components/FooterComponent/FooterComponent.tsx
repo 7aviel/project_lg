@@ -22,7 +22,7 @@ const FooterComponent = ({ logo }: Props) => {
         <Link className="logo" to={"/"}>
           <img src={logo} alt="logo" className="logo__img" />
         </Link>
-        <h1 className="logo__title">Gestoria y Seguros</h1>
+        <h1 className="logo__title">Gestoría y Seguros</h1>
       </div>
       <div>
         <CustomMap />
@@ -43,7 +43,7 @@ const FooterComponent = ({ logo }: Props) => {
           </span>
         </p>
         <p className={styles.developer}>
-          Gestoria y seguros Luisa Giampietri. Todos los derechos
+          Gestoría y seguros Luisa Giampietri. Todos los derechos
           reservados&nbsp;&nbsp;
           <span>
             <FaCopyright />

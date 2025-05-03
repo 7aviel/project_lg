@@ -14,7 +14,7 @@ router.post("/send-car-accident", upload.fields([
   { name: "daniosFotos", maxCount: 5 },
   {name : "cedulaYSeguro", maxCount: 5}
 ]), async (req, res) => {
-  const { email, phone, Provincia, Localidad, Calle, Fecha, dominio, detalles, mensaje, descripcionFotoDeLicencia, descripcionFotoDocumentacionOtro, descripcionDaniosFotos, descripcionCedulaYSeguro } = req.body;
+  const { fullName, company, email, phone, Provincia, Localidad, Calle, Fecha, dominio, detalles, mensaje, descripcionFotoDeLicencia, descripcionFotoDocumentacionOtro, descripcionDaniosFotos, descripcionCedulaYSeguro } = req.body;
   const files = req.files;
   const uploadedFiles = [];
   const folderId = "1-pxoHF8ni8eiPBxxZh_4G_9sFcxMSrcz";
@@ -39,7 +39,7 @@ router.post("/send-car-accident", upload.fields([
       }
     }
 
-    let emailText = `Denuncia de accidente automovilístico\n\nCorreo: ${email}\nTeléfono: ${phone}\nProvincia: ${Provincia}\nLocalidad: ${Localidad}\nDirección: ${Calle}\nFecha del evento: ${Fecha}\nDominio del vehículo asegurado: ${dominio}\n\nDetalles:\n${detalles}\nRelato:\n${mensaje}\n\nEnlaces a evidencia:\n`;
+    let emailText = `Denuncia de accidente automovilístico\n\n Nombre completo: ${fullName} \n Empresa del asegurado: ${company}\nCorreo: ${email}\nTeléfono: ${phone}\nProvincia: ${Provincia}\nLocalidad: ${Localidad}\nDirección: ${Calle}\nFecha del evento: ${Fecha}\nDominio del vehículo asegurado: ${dominio}\n\nDetalles:\n${detalles}\nRelato:\n${mensaje}\n\nEnlaces a evidencia:\n`;
 
     uploadedFiles.forEach((file, index) => {
       emailText += `${index + 1}. ${file.name} (${file.description}): ${file.url}\n`;

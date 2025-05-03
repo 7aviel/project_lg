@@ -69,7 +69,13 @@ const FormOneInsurance = () => {
             <label htmlFor="cobertura">Cobertura que le interesa</label>
             <select title="select" name="Cobertura" id="cobertura">
               <option value="Opción">Elige una opcion</option>
+              <option value="Responsabilidad civil (obligatorio)">
+                Responsabilidad civil (obligatorio)
+              </option>
               <option value="Contra Terceros">Contra terceros</option>
+              <option value="Robo">Robo</option>
+              <option value="Destruccion">Destrucción</option>
+              <option value="Granizo">Granizo</option>
               <option value="Otro">Otro</option>
             </select>
             <label htmlFor="company">

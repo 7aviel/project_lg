@@ -26,9 +26,9 @@ const InsuranceCardsSection = () => {
   };
 
   return (
-    <section>
+    <section id="insurance">
       <div className={`${styles.title}`}>
-        <h1>¿Que necesitas hacer?</h1>
+        <h1>Seguros</h1>
       </div>
       <div className="section2">
         <Card

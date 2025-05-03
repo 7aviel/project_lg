@@ -55,6 +55,22 @@ const CarAccidentForm = () => {
       <div className="card-section flex space-around">
         <div className={formStyles.card}>
           <form onSubmit={sendToBackend} encType="multipart/form-data">
+            <label htmlFor="fullName">Nombre y apellido</label>
+            <input
+              type="text"
+              name="fullName"
+              id="fullName"
+              placeholder="Nombre completo"
+              required
+            />
+            <label htmlFor="company">Compañía del asegurado</label>
+            <input
+              type="text"
+              name="company"
+              id="company"
+              placeholder="empresa"
+              required
+            />
             <label htmlFor="email">Correo Electrónico</label>
             <input
               type="email"

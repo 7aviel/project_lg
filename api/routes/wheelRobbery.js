@@ -11,7 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 router.post("/send-wheel-robbery", upload.fields([
   { name: "denunciaPolicial", maxCount: 5 },
 ]), async (req, res) => {
-  const { email, phone, Calle, Localidad, Fecha, Rueda, descripcionDenunciaPolicial} = req.body;
+  const { fullName, company, email, phone, Calle, Localidad, Fecha, Rueda, descripcionDenunciaPolicial} = req.body;
   const files = req.files;
   const uploadedFiles = [];
   const folderId = "1yiIZy2e2rg_U-GI7MNNXveEpaJqO1sGV"; // Reemplaza con tu carpeta en Google Drive
@@ -34,7 +34,7 @@ router.post("/send-wheel-robbery", upload.fields([
     }
 
     // Crear texto del correo con los enlaces de la denuncia
-    let emailText = `Denuncia de robo de rueda\n\nCorreo: ${email}\nTeléfono: ${phone}\nCalle y altura: ${Calle}, Localidad: ${Localidad}\nFecha del evento: ${Fecha}\nRueda robada: ${Rueda}\n\nEnlace(s) a denuncia policial:\n\n`;
+    let emailText = `Denuncia de robo de rueda\n\n Nombre completo: ${fullName} \n Empresa del asegurado: ${company}\nCorreo: ${email}\nTeléfono: ${phone}\nCalle y altura: ${Calle}, Localidad: ${Localidad}\nFecha del evento: ${Fecha}\nRueda robada: ${Rueda}\n\nEnlace(s) a denuncia policial:\n\n`;
 
     uploadedFiles.forEach((file, index) => {
       emailText += `${index + 1}. ${file.name} (${file.description}): ${file.url}\n`;

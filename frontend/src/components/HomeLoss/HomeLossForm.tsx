@@ -50,6 +50,22 @@ const HomeLossForm = () => {
       <div className="card-section flex space-around">
         <div className={formStyles.card}>
           <form onSubmit={sendToBackend} encType="multipart/form-data">
+            <label htmlFor="fullName">Nombre y apellido</label>
+            <input
+              type="text"
+              name="Nombre completo"
+              id="fullName"
+              placeholder="Nombre completo"
+              required
+            />
+            <label htmlFor="company">Compañía del asegurado</label>
+            <input
+              type="text"
+              name="Empresa del asegurado"
+              id="company"
+              placeholder="empresa"
+              required
+            />
             <input
               type="hidden"
               name="Solicitud de denuncia"
@@ -69,7 +85,7 @@ const HomeLossForm = () => {
             <input
               type="tel"
               id="tel"
-              name="phone"
+              name="Telefono"
               title="phone"
               placeholder="+54 (343) 00000000"
               required

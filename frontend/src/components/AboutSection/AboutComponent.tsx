@@ -1,6 +1,5 @@
-import { FaFacebook, FaLinkedinIn, FaPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import aboutStyles from "./AboutStyles.module.css";
-import { RiWhatsappFill } from "react-icons/ri";
 
 const AboutComponent = () => {
   const handleClick = () => {
@@ -27,18 +26,13 @@ const AboutComponent = () => {
           todos los procesos y que puedas resolverlos con rapidez, transparencia
           y tranquilidad.
         </p>
-        <div className="flex space-between center-items">
+        <div className="flex content-center">
           <button title="btn" type="submit" onClick={handleClick}>
-            <div className="flex space-around">
+            <div className="flex content-center">
               <p>Saber &nbsp;</p>
               <FaPlus size={20} />
             </div>
           </button>
-          <div className={`flex center-items`}>
-            <FaLinkedinIn size={20} className={aboutStyles.socialMedia} />
-            <FaFacebook size={19} className={aboutStyles.socialMedia} />
-            <RiWhatsappFill size={20} className={aboutStyles.socialMedia} />
-          </div>
         </div>
       </div>
     </section>
