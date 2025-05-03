@@ -17,11 +17,7 @@ const locations: Poi[] = [
 const CustomMap = () => {
   return (
     <div className="map-container">
-      <APIProvider
-        apiKey={MAP_API_KEY}
-        onLoad={() => console.log("Maps API has loaded.")}
-        onError={(err) => console.error("Maps API failed to load:", err)}
-      >
+      <APIProvider apiKey={MAP_API_KEY}>
         <Map
           defaultZoom={15}
           defaultCenter={{ lat: -31.73870581213701, lng: -60.50978344907594 }} // Buenos Aires

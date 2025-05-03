@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./FormOneInsurance.module.css";
 import Swal from "sweetalert2";
 import formStyles from "../Form.module.css";
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3_FORM;
 
 const FormOneInsurance = () => {
   const [vehicleType, setVehicleType] = useState({ car: false, moto: false });
@@ -14,7 +15,6 @@ const FormOneInsurance = () => {
     }));
   };
 
-  const WEB3FORMS_ACCESS_KEY = "90991a55-8abf-4519-929b-80edb7e5155c"; // Reemplaza con tu clave de Web3Forms
   const [isLoading, setIsLoading] = useState(false);
 
   // Función para enviar datos con Web3Forms
