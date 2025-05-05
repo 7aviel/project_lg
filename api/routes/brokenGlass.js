@@ -11,7 +11,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 router.post("/send-broken-glass", upload.fields([
   { name: "cristalRoto", maxCount: 5 }, // Fotos del cristal dañado
 ]), async (req, res) => {
-  const { fullName, company, email, phone, Calle, Localidad, Fecha, Rueda, descripcionCristalRoto } = req.body;
+  const { fullName, company, email, phone, Calle, Localidad, Fecha, Rueda, descripcionCristalRoto, mensaje } = req.body;
   const files = req.files;
   const uploadedFiles = [];
   const folderId = "1OEu8dZIYUJMOVTYYnq8YkVIYSQIbfFux"; // Reemplaza con tu carpeta en Google Drive
@@ -35,7 +35,7 @@ router.post("/send-broken-glass", upload.fields([
       }
     }
     // Crear texto del correo con los enlaces de la denuncia
-    let emailText = `Denuncia de cristal roto\n\n Nombre completo: ${fullName} \n Empresa del asegurado: ${company}\nCorreo: ${email}\nTeléfono: ${phone}\nDirección: ${Calle}, ${Localidad}\nFecha del evento: ${Fecha}\nCristal afectado: ${Rueda}\n\nEnlace(s) a evidencia fotográfica:\n\n`;
+    let emailText = `Denuncia de cristal roto\n\n Nombre completo: ${fullName} \n Empresa del asegurado: ${company}\nCorreo: ${email}\nTeléfono: ${phone}\nDirección: ${Calle}, ${Localidad}\nFecha del evento: ${Fecha}\nCristal afectado: ${Rueda}\n Relato por escrito de cómo ocurrió el siniestro: ${mensaje}\n\nEnlace(s) a evidencia fotográfica:\n\n`;
 
     uploadedFiles.forEach((file, index) => {
       emailText += `${index + 1}. ${file.name} (${file.description}): ${file.url}\n`;

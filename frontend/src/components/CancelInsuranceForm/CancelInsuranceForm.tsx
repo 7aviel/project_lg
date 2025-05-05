@@ -4,7 +4,7 @@ import { useState } from "react";
 import formStyles from "../Forms/Form.module.css";
 const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3_FORM;
 
-const HomeLossForm = () => {
+const CancelInsuranceForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Función para enviar datos con Web3Forms
@@ -52,9 +52,9 @@ const HomeLossForm = () => {
           <form onSubmit={sendToBackend} encType="multipart/form-data">
             <input
               type="hidden"
-              name="Solicitud de denuncia"
+              name="Solicitud de anulacion de poliza"
               id="accident"
-              value="Formulario de Siniestro en el hogar"
+              value="Formulario de anulacion de poliza"
               required
             />
             <label htmlFor="fullName">Nombre y apellido</label>
@@ -63,6 +63,14 @@ const HomeLossForm = () => {
               name="Nombre completo"
               id="fullName"
               placeholder="Nombre completo"
+              required
+            />
+            <label htmlFor="email">Correo Electrónico</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="tuemail@email.com"
               required
             />
             <label htmlFor="company">Compañía del asegurado</label>
@@ -74,14 +82,6 @@ const HomeLossForm = () => {
               required
             />
 
-            <label htmlFor="email">Correo Electrónico</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="tuemail@email.com"
-              required
-            />
             <label htmlFor="tel">Teléfono de contacto</label>
             <input
               type="tel"
@@ -91,42 +91,24 @@ const HomeLossForm = () => {
               placeholder="+54 (343) 00000000"
               required
             />
-            <label htmlFor="dni">DNI del titular del seguro</label>
-            <input type="tel" placeholder="DNI" name="DNI" id="dni" required />
-
-            <label htmlFor="accidentTime">
-              Dia, fecha y hora del siniestro
-            </label>
-            <input
-              type="datetime-local"
-              name="Fecha"
-              id="accidentTime"
-              required
-            />
-            <label htmlFor="object">¿Que objeto fue afectado?</label>
+            <label htmlFor="poliza">Baja de poliza</label>
             <input
               type="text"
-              name="Objeto afectado"
-              id="object"
-              placeholder="Escribir"
+              placeholder="Poliza que desea anular"
+              name="Poliza a anular"
+              id="poliza"
               required
             />
-            <label htmlFor="damage">En caso de haber daños, ¿Cuales son?</label>
-            <textarea
-              name="Daños"
-              id="damage"
-              placeholder="Detalle aquí"
+            <label htmlFor="domain">Dominio</label>
+            <input
+              type="text"
+              name="Dominio"
+              id="domain"
+              placeholder="Dominio"
               required
-            ></textarea>
-            <label htmlFor="details">
-              Relato por escrito de cómo ocurrió el siniestro
-            </label>
-            <textarea
-              name="Relato por escrito de como ocurrio el siniestro"
-              id="details"
-              placeholder="Detalle aquí"
-              required
-            ></textarea>
+            />
+            <label htmlFor="reason">¿Cuál es el motivo?</label>
+            <input name="Motivo" id="reason" placeholder="Escriba aquí"></input>
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>
                 {isLoading ? "Enviando..." : "Enviar"}
@@ -139,4 +121,4 @@ const HomeLossForm = () => {
   );
 };
 
-export default HomeLossForm;
+export default CancelInsuranceForm;

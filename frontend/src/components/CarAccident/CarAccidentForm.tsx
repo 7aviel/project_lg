@@ -211,7 +211,7 @@ const CarAccidentForm = () => {
               required
             ></textarea>
             <label htmlFor="details">
-              Relato por Escrito de Cómo Ocurrió el Siniestro
+              Relato por escrito de cómo ocurrió el siniestro
             </label>
             <textarea
               name="mensaje"

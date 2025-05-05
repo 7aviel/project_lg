@@ -131,6 +131,15 @@ const BrokenGlassForm = () => {
               name="descripcionCristalRoto"
               value="Foto/s de cristal dañado"
             />
+            <label htmlFor="details">
+              Relato por escrito de cómo ocurrió el siniestro
+            </label>
+            <textarea
+              name="mensaje"
+              id="details"
+              placeholder="Detalle aquí"
+              required
+            ></textarea>
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>
                 {isLoading ? "Enviando..." : "Enviar"}

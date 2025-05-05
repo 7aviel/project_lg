@@ -14,6 +14,7 @@ import HomeLossPage from "./views/HomeLossPage.tsx";
 import WheelRobberyPage from "./views/WheelRobberyPage.tsx";
 import BrokenGlassPage from "./views/BrokenGlassPage.tsx";
 import CarAccidentPage from "./views/CarAccidentPage.tsx";
+import CancelInsurancePage from "./views/CancelInsurancePage.tsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
   { path: "/robo-de-rueda", element: <WheelRobberyPage /> },
   { path: "/cristal-roto", element: <BrokenGlassPage /> },
   { path: "/siniestro-vial", element: <CarAccidentPage /> },
+  { path: "/anular-poliza", element: <CancelInsurancePage /> },
 ]);
 
 createRoot(document.getElementById("root")!).render(

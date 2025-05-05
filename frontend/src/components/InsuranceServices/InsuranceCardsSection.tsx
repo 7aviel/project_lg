@@ -6,6 +6,7 @@ import {
   faMotorcycle,
   faCarSide,
   faMoneyBill1Wave,
+  faGears,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,6 +24,10 @@ const InsuranceCardsSection = () => {
 
   const handleClickThree = () => {
     return navigate("/alta-moto");
+  };
+
+  const handleClickFour = () => {
+    return navigate("/anular-poliza");
   };
 
   return (
@@ -52,7 +57,7 @@ const InsuranceCardsSection = () => {
             />
           }
           text="Realizamos el procedimiento de alta en seguros para automotores"
-          buttonText="Solicitar Alta Auto"
+          buttonText="Solicitar alta de auto"
           btnOnClick={handleClickTwo}
         />
         <Card
@@ -64,8 +69,20 @@ const InsuranceCardsSection = () => {
             />
           }
           text="Realizamos el procedimiento de alta en seguros para motocicletas"
-          buttonText="Solicitar Alta Moto"
+          buttonText="Solicitar alta de moto"
           btnOnClick={handleClickThree}
+        />
+        <Card
+          icon={
+            <FontAwesomeIcon
+              icon={faGears}
+              size="2xl"
+              className={`${cardStyles.card__icon}`}
+            />
+          }
+          text="Realizamos el procedimiento de baja del seguro que solicites"
+          buttonText="Solicitar baja de poliza"
+          btnOnClick={handleClickFour}
         />
       </div>
     </section>
