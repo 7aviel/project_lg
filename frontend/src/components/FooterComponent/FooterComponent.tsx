@@ -28,6 +28,7 @@ const FooterComponent = ({ logo }: Props) => {
         <CustomMap />
       </div>
       <div className="flex content-center center-items flex-column">
+        <p>Calle Almte. Guillermo Brown 490, Ciudad de Paraná</p>
         <p className={`${styles.developer}`}>
           Sitio diseñado y desarrollado por Ariel Vilche&nbsp;&nbsp;
           <span>

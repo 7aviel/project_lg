@@ -14,7 +14,7 @@ export default function CardRow() {
   const navigate = useNavigate();
 
   const handleClickOne = () => {
-    window.location.href = "https://api.whatsapp.com/send?phone=543434501551";
+    window.open("https://api.whatsapp.com/send?phone=543434501551");
   };
 
   const handleClickTwo = () => {

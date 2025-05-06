@@ -2,11 +2,6 @@ import { FaArrowCircleDown } from "react-icons/fa";
 import insuranceSectionOneStyles from "./InsuranceSectionOne.module.css";
 import { NavHashLink } from "react-router-hash-link";
 const InsuranceSectionOne = () => {
-  /*const handleClick = () => {
-    window.location.href =
-      "https://www.sancristobal.com.ar/pas/lg-gestoria-y-seguros ";
-  };*/
-
   return (
     <>
       <section
