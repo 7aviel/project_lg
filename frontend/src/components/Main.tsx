@@ -10,9 +10,9 @@ import Accordion from "./Accordion/Accordion";
 
 const faqData = [
   {
-    question: "¿Que documentacion debo tener para una transferencia?",
+    question: "¿Que documentación debo tener para una transferencia?",
     answer:
-      "La documentacion obligatoria para realizar una transferencia es la siguiente: Título de propiedad del automotor, Cédula de identificación del automotor, DNI o cédula de identidad, Formulario 08 completo y firmado.",
+      "La documentación obligatoria para realizar una transferencia es la siguiente: Título de propiedad del automotor, Cédula de identificación del automotor, DNI o cédula de identidad, Formulario 08 completo y firmado.",
   },
 
   {
