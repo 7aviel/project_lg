@@ -8,6 +8,25 @@ const API_URL = import.meta.env.VITE_API_URL;
 const BrokenGlassForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    maxCount: number
+  ) => {
+    const files = event.target.files;
+
+    if (files && files.length > maxCount) {
+      Swal.fire({
+        title: "Demasiados archivos",
+        text: `Solo puedes subir un máximo de ${maxCount} archivos.`,
+        icon: "warning",
+        buttonsStyling: false,
+      });
+
+      // Limpia el campo si excede el límite
+      event.target.value = "";
+    }
+  };
+
   const sendToBackend = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -124,6 +143,9 @@ const BrokenGlassForm = () => {
               title="denuncia"
               accept="image/png, image/jpeg"
               multiple
+              onChange={(e) => {
+                handleFileChange(e, 5);
+              }}
               required
             />
             <input

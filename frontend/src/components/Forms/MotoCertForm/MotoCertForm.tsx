@@ -126,6 +126,7 @@ const MotoCertForm = () => {
               name="email"
               id="email"
               placeholder="tuemail@email.com"
+              required
             />
             <label htmlFor="">Telefono de contacto</label>
             <input
@@ -133,9 +134,10 @@ const MotoCertForm = () => {
               title="phone"
               name="phone"
               placeholder="+54 (343) 00000000"
+              required
             />
             <label htmlFor="">Medio de pago</label>
-            <select name="payment" title="option">
+            <select name="payment" title="option" required>
               <option value="opcion">Elige una opcion</option>
               <option value="Débito">Débito</option>
               <option value="Crédito">Crédito</option>

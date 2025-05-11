@@ -67,7 +67,7 @@ const FormOneInsurance = () => {
               value="Formulario de presupuesto"
             />
             <label htmlFor="cobertura">Cobertura que le interesa</label>
-            <select title="select" name="Cobertura" id="cobertura">
+            <select title="select" name="Cobertura" id="cobertura" required>
               <option value="Opción">Elige una opcion</option>
               <option value="Responsabilidad civil (obligatorio)">
                 Responsabilidad civil (obligatorio)
@@ -87,6 +87,7 @@ const FormOneInsurance = () => {
               name="Empresa"
               id="company"
               placeholder="Empresa"
+              required
             />
             <label htmlFor="">¿Que tipo de vehiculo es?</label>
             <div className={`${styles.checkbox}`}>
@@ -121,6 +122,7 @@ const FormOneInsurance = () => {
               name="Dominio"
               id="dominio"
               placeholder="dominio"
+              required
             />
             <label htmlFor="email">Correo Electronico</label>
             <input
@@ -128,9 +130,10 @@ const FormOneInsurance = () => {
               name="Email"
               id="email"
               placeholder="tuemail@email.com"
+              required
             />
             <label htmlFor="use">Uso del vehiculo</label>
-            <select title="select" name="select" id="use">
+            <select title="select" name="select" id="use" required>
               <option value="Opcion">Elige una opcion</option>
               <option value="Comercial">Comercial</option>
               <option value="Particular">Particular</option>
@@ -143,6 +146,7 @@ const FormOneInsurance = () => {
               id="phone"
               name="Telefono"
               placeholder="+54 (343) 00000000"
+              required
             />
             <div className="flex space-around">
               <button title="btn" className={`${styles.btn}`}>

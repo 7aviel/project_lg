@@ -62,6 +62,7 @@ const ShipBudget = () => {
               placeholder="Ejemplo: PARA03125"
               name="Matricula"
               id="matricula"
+              required
             />
             <label htmlFor="buyerData">
               Datos de contacto comprador (como figura en DNI)
@@ -72,14 +73,21 @@ const ShipBudget = () => {
               name="Email"
               id="email"
               placeholder="tuemail@email.com"
+              required
             />
             <label htmlFor="">Telefono de contacto</label>
-            <input type="tel" title="phone" placeholder="+54 (343) 00000000" />
+            <input
+              type="tel"
+              title="phone"
+              placeholder="+54 (343) 00000000"
+              required
+            />
             <label>Nombre y Apellido</label>
             <input
               type="text"
               name="Nombre y Apellido"
               id="nombre"
+              required
               placeholder="nombre y apellido"
             />
             <label htmlFor="dni">DNI</label>
@@ -89,6 +97,7 @@ const ShipBudget = () => {
               id="dni"
               name="DNI"
               placeholder="DNI"
+              required
             />
             <label htmlFor="province">Provincia</label>
             <input
@@ -97,6 +106,7 @@ const ShipBudget = () => {
               title="province"
               id="province"
               placeholder="provincia"
+              required
             />
             <label htmlFor="town">Localidad</label>
             <input
@@ -105,6 +115,7 @@ const ShipBudget = () => {
               title="town"
               id="town"
               placeholder="localidad"
+              required
             />
             <label htmlFor="address">Domicilio</label>
             <input
@@ -113,6 +124,7 @@ const ShipBudget = () => {
               title="address"
               id="address"
               placeholder="domicilio"
+              required
             />
 
             <div className="flex space-around">
