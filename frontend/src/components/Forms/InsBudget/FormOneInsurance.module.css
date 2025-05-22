@@ -17,3 +17,7 @@
 .btn{
     margin: var(--globalSpacing) 0 0 0;
 }
+
+.padding__top{
+    padding-top: var(--globalSpacing);
+}

@@ -11,7 +11,7 @@
 
 .section__title{
     color: var(--darkGrey);
-    padding: 2.5% 0 0 5%;
+    padding: 2.5% 0 6% 5%;
 }
 
 .accordion__items{
@@ -26,8 +26,14 @@
 .items__title{
     cursor: pointer;
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
+}
+
+.items__title>h5{
+    font-size: var(--h7);
+    max-width: 50vw;
 }
 
 .items__content{
@@ -45,4 +51,18 @@
 .items__content__show>a{
     color: var(--colorCharcoal);
     cursor: pointer;
+}
+
+@media only screen and (min-width: 700px) {
+    .section__title{
+    color: var(--darkGrey);
+    padding: 2.5% 0 2% 5%;
+}
+}
+
+@media only screen and (min-width: 425px) {
+    .items__title>h5{
+    font-size: var(--h6);
+    max-width: 50vw;
+}
 }

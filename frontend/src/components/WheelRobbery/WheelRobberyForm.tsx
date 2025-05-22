@@ -1,13 +1,27 @@
 import styles from "../Forms/InsBudget/FormOneInsurance.module.css";
+import ReCAPTCHA from "react-google-recaptcha";
 import formStyles from "../Forms/Form.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Swal from "sweetalert2";
 const API_URL = import.meta.env.VITE_API_URL;
+const RECAPTCHA_KEY = import.meta.env.VITE_CAPTCHA_KEY;
 
 const WheelRobberyForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [captchaValid, setCaptchaValid] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
+
+  const handleCaptcha = (token: string | null) => {
+    if (token) {
+      setCaptchaValid(true);
+      setCaptchaError("");
+    } else {
+      setCaptchaValid(false);
+      setCaptchaError("Debes completar el captcha.");
+    }
+  };
 
   const handleFileChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -30,6 +44,11 @@ const WheelRobberyForm = () => {
 
   const sendToBackend = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!captchaValid) {
+      setCaptchaError("Debes completar el captcha.");
+      return;
+    }
 
     const formData = new FormData(event.target as HTMLFormElement);
 
@@ -161,10 +180,14 @@ const WheelRobberyForm = () => {
               placeholder="Detalle aquí"
               required
             ></textarea>
-            <div className="flex space-around">
-              <button title="btn" className={`${styles.btn}`}>
-                {isLoading ? "Enviando..." : "Enviar"}
-              </button>
+            <div className="flex flex-column center-items space-around">
+              <ReCAPTCHA sitekey={RECAPTCHA_KEY} onChange={handleCaptcha} />
+              {!captchaValid && <p>{captchaError}</p>}
+              <div className="flex space-around">
+                <button title="btn" className={`${styles.btn}`}>
+                  {isLoading ? "Enviando..." : "Enviar"}
+                </button>
+              </div>
             </div>
           </form>
         </div>

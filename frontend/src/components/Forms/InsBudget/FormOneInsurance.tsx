@@ -55,11 +55,63 @@ const FormOneInsurance = () => {
     }
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const vehicleSelected = vehicleType.car || vehicleType.moto;
+    const insuranceSelected =
+      (event.target as HTMLFormElement).cobertura.value !== "Opción";
+    const useSelected =
+      (event.target as HTMLFormElement).use.value !== "Opcion";
+
+    if (!vehicleSelected && !insuranceSelected && !useSelected) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar un tipo de vehículo (Auto/Moto), una opción de cobertura y el uso del vehículo.",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    if (!vehicleSelected) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar un tipo de vehículo (Auto/Moto).",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    if (!insuranceSelected) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar una opción de cobertura.",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    if (!useSelected) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar el uso del vehículo (Comercial, Particular u Otro).",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    sendToBackend(event);
+  };
+
   return (
     <section className={`${styles.bg}`}>
       <div className="card-section flex space-around">
         <div className={formStyles.card}>
-          <form onSubmit={sendToBackend} encType="multipart/form-data">
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
             <input
               type="hidden"
               name="Solicitud de Presupuesto de Seguro"

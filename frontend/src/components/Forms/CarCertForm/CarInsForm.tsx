@@ -4,11 +4,25 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import formStyles from "../Form.module.css";
+import ReCAPTCHA from "react-google-recaptcha";
 const API_URL = import.meta.env.VITE_API_URL;
+const RECAPTCHA_KEY = import.meta.env.VITE_CAPTCHA_KEY;
 
 const CarInsForm = () => {
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB por archivo
   const [isLoading, setIsLoading] = useState(false);
+  const [captchaValid, setCaptchaValid] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
+
+  const handleCaptcha = (token: string | null) => {
+    if (token) {
+      setCaptchaValid(true);
+      setCaptchaError("");
+    } else {
+      setCaptchaValid(false);
+      setCaptchaError("Debes completar el captcha.");
+    }
+  };
 
   const handleFileChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -51,6 +65,11 @@ const CarInsForm = () => {
   const sendToBackend = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (!captchaValid) {
+      setCaptchaError("Debes completar el captcha.");
+      return;
+    }
+
     const formData = new FormData(event.target as HTMLFormElement);
 
     if (!validateFiles(formData)) {
@@ -89,11 +108,30 @@ const CarInsForm = () => {
     }
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const paymentSelected =
+      (event.target as HTMLFormElement).payment.value !== "opcion";
+
+    if (!paymentSelected) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar un medio de pago.",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    sendToBackend(event);
+  };
+
   return (
     <section className={styles.bg}>
       <div className="flex space-around">
         <div className={formStyles.card}>
-          <form onSubmit={sendToBackend} encType="multipart/form-data">
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
             <label htmlFor="">Correo Electrónico</label>
             <input
               type="email"
@@ -213,14 +251,16 @@ const CarInsForm = () => {
               name="gncObleaDescription"
               value="Foto de GNC vigente"
             />
-            <div className="flex space-around">
-              <button
-                type="submit"
-                className={`${styles.btn}`}
-                disabled={isLoading}
-              >
-                {isLoading ? "Enviando..." : "Enviar"}
-              </button>
+            <div
+              className={`flex flex-column center-items space-around ${styles.padding__top}`}
+            >
+              <ReCAPTCHA sitekey={RECAPTCHA_KEY} onChange={handleCaptcha} />
+              {!captchaValid && <p>{captchaError}</p>}
+              <div className="flex space-around">
+                <button title="btn" className={`${styles.btn}`}>
+                  {isLoading ? "Enviando..." : "Enviar"}
+                </button>
+              </div>
             </div>
           </form>
         </div>

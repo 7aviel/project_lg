@@ -2,11 +2,26 @@ import { useState } from "react";
 import styles from "../InsBudget/FormOneInsurance.module.css";
 import Swal from "sweetalert2";
 import formStyles from "../Form.module.css";
+import ReCAPTCHA from "react-google-recaptcha";
 const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3_FORM;
+const RECAPTCHA_KEY = import.meta.env.VITE_CAPTCHA_KEY;
 
 const VehicleBudget = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [vehicleType, setVehicleType] = useState({ car: false, moto: false });
+  const [captchaValid, setCaptchaValid] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
+
+  const handleCaptcha = (token: string | null) => {
+    if (token) {
+      setCaptchaValid(true);
+      setCaptchaError("");
+    } else {
+      setCaptchaValid(false);
+      setCaptchaError("Debes completar el captcha.");
+    }
+  };
+
   const [selectedItems, setSelectedItems] = useState<{
     [key: string]: boolean;
   }>({
@@ -48,6 +63,11 @@ const VehicleBudget = () => {
   const sendToBackend = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (!captchaValid) {
+      setCaptchaError("Debes completar el captcha.");
+      return;
+    }
+
     const formData = new FormData(event.target as HTMLFormElement);
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
 
@@ -82,11 +102,52 @@ const VehicleBudget = () => {
     }
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const selectedElements = Object.values(selectedItems).some(
+      (selected) => selected
+    );
+    const vehicleSelected = vehicleType.car || vehicleType.moto;
+
+    if (!vehicleSelected && !selectedElements) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar al menos una opción de los elementos y el tipo de vehículo (Auto/Moto).",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    if (!vehicleSelected) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar el tipo de vehículo (Auto/Moto).",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    if (!selectedElements) {
+      Swal.fire({
+        title: "Selección requerida",
+        text: "Debes seleccionar al menos uno de los siguientes elementos: Título, Cédula, Chapa o Verificación.",
+        icon: "warning",
+        buttonsStyling: false,
+      });
+      return;
+    }
+
+    sendToBackend(event);
+  };
+
   return (
     <section className={`${styles.bg}`}>
       <div className="flex space-around">
         <div className={formStyles.card}>
-          <form onSubmit={sendToBackend} encType="multipart/form-data">
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
             <input
               type="hidden"
               name="Solicitud de Presupuesto de Auto/Moto"
@@ -238,14 +299,16 @@ const VehicleBudget = () => {
               placeholder="+54 (343) 00000000"
               required
             />
-            <div className="flex space-around">
-              <button
-                type="submit"
-                className={`${styles.btn}`}
-                disabled={isLoading}
-              >
-                {isLoading ? "Enviando..." : "Enviar"}
-              </button>
+            <div
+              className={`flex flex-column center-items space-around ${styles.padding__top}`}
+            >
+              <ReCAPTCHA sitekey={RECAPTCHA_KEY} onChange={handleCaptcha} />
+              {!captchaValid && <p>{captchaError}</p>}
+              <div className="flex space-around">
+                <button title="btn" className={`${styles.btn}`}>
+                  {isLoading ? "Enviando..." : "Enviar"}
+                </button>
+              </div>
             </div>
           </form>
         </div>
