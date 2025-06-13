@@ -57,11 +57,6 @@ const faqData = [
       </>
     ),
   },
-  {
-    question: "¿Que documentación debo tener para una transferencia?",
-    answer:
-      "La documentación obligatoria para realizar una transferencia es la siguiente: Título de propiedad del automotor, Cédula de identificación del automotor, DNI o cédula de identidad, Formulario 08 completo y firmado.",
-  },
 ];
 
 const InsurancePage = () => {
